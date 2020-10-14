@@ -9,6 +9,8 @@
 # OS or Editor folders
 .DS_Store
 .cache
+.idea/
+.idea
 
 # Folders to ignore
 .hg

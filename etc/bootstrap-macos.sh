@@ -34,3 +34,4 @@ printf "\n\e[33m!\e[0m \e[1mFinish by doing this manual tasks:\e[0m\n"
     "— Update Calendar preferences:" \
     "    — Show 5 days per week;" \
     "    — Show 6 hours a time;" \
+    "— Remove control + space shortcut from OS;" \

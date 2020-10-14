@@ -8,6 +8,7 @@ source 'github.sh'
 source 'macos.sh'
 source 'app_store.sh'
 source 'etc/symlink-dotfiles.sh'
+chmod -R go-w "$(brew --prefix)/share"
 
 printf "\n\e[33m!\e[0m \e[1mFinish by doing this manual tasks:\e[0m\n"
     printf "%s\n" \

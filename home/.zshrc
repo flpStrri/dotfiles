@@ -118,3 +118,13 @@ zinit light-mode for \
     denysdovhan/spaceship-prompt
 SPACESHIP_VENV_PREFIX="on "
 SPACESHIP_VENV_SUFFIX=" env "
+
+
+# Homebrew Shell Completion
+# --------
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+
+  autoload -Uz compinit
+  compinit
+fi

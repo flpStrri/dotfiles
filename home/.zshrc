@@ -116,3 +116,5 @@ zinit light-mode for \
     zinit-zsh/z-a-patch-dl \
     zinit-zsh/z-a-bin-gem-node \
     denysdovhan/spaceship-prompt
+SPACESHIP_VENV_PREFIX="on "
+SPACESHIP_VENV_SUFFIX=" env "

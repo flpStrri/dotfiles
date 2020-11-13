@@ -70,7 +70,9 @@ set +x
 
 # TODO: Add ~/ to Finder sidebar
 
-# TODO: Make new Finder show ~/
+# Make new Finder show ~/
+defaults write com.apple.finder NewWindowTarget -string "PfHm"
+defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}"
 
 # Keyboard & Input
 # --------

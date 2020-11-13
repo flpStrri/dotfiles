@@ -167,6 +167,15 @@ defaults write com.apple.SoftwareUpdate CriticalUpdateInstall -bool true
 # Turn on app auto-update
 defaults write com.apple.commerce AutoUpdate -bool true
 
+# Terminal
+# --------
+# Define Gruvbox as defaut theme
+if ! defaults read com.apple.Terminal "Window Settings" | grep -Fw gruvbox-dark >/dev/null; then
+    open -a Terminal assets/Gruvbox-dark.terminal
+fi
+defaults write com.apple.terminal "Default Window Settings" -string "Gruvbox-dark"
+defaults write com.apple.terminal "Startup Window Settings" -string "Gruvbox-dark"
+
 # Kill affected applications
 # --------
 for app in "Address Book" "Calendar" "Contacts" "Dock" "Finder" "Mail" "SystemUIServer" "iCal"; do

@@ -1,19 +1,3 @@
-function add_app_to_dock {
-   # adds an application to macOS Dock
-   # usage: add_app_to_dock "Application Name" 
-   # example add_app_to_dock "Terminal"
-
-   app_name="${1}"
-   launchservices_path="/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister"
-   app_path=$(${launchservices_path} -dump | grep -o "/.*${app_name}.app" | grep -v -E "Backups|Caches|TimeMachine|Temporary|/Volumes/${app_name}" | uniq | sort | head -n1)
-   if open -Ra "${app_path}"; then
-       echo "$app_path added to the Dock."
-       defaults write com.apple.dock persistent-apps -array-add "<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>${app_path}</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>"
-   else
-       echo "ERROR: $1 not found." 1>&2
-   fi
- }
-
 #!/usr/bin/env zsh
 osascript -e 'tell application "System Preferences" to quit'
 
@@ -113,18 +97,30 @@ defaults write com.apple.dock mru-spaces -bool false
 # Don’t show recent applications in Dock
 defaults write com.apple.dock show-recents -bool false
 
-# Wipe all (default) app icons from the Dock
-defaults write com.apple.dock persistent-apps -array
+# Update dock icons
+chmod +x ./etc/set-icon
+./etc/set-icon assets/Slack.icns /Applications/Slack.app
+./etc/set-icon assets/NetNewsWire.icns /Applications/NetNewsWire.app
+./etc/set-icon assets/1Password.icns /Applications/1Password\ 7.app
+./etc/set-icon assets/Pycharm.icns /Applications/Pycharm.app
+./etc/set-icon assets/Docker.icns /Applications/Docker.app
+./etc/set-icon assets/Discord.icns /Applications/Discord.app
+./etc/set-icon assets/AppCleaner.icns /Applications/AppCleaner.app
+./etc/set-icon assets/VSCode.icns /Applications/Visual\ Studio\ Code.app
 
 # Add apps to dock
-add_app_to_dock "Mail"
-add_app_to_dock "Calendar"
-add_app_to_dock "Reminders"
-add_app_to_dock "Safari"
-add_app_to_dock "Slack"
-add_app_to_dock "PyCharm"
-add_app_to_dock "Terminal"
-add_app_to_dock "Music"
+set -x
+dockutil --remove all --no-restart          
+dockutil --add /System/Applications/Mail.app --no-restart
+dockutil --add /System/Applications/Calendar.app --no-restart
+dockutil --add /System/Applications/Reminders.app --no-restart
+dockutil --add /Applications/Safari.app --no-restart
+dockutil --add /Applications/Slack.app --no-restart
+dockutil --add /Applications/PyCharm.app --no-restart
+dockutil --add /System/Applications/Utilities/Terminal.app --no-restart
+dockutil --add /System/Applications/Music.app --no-restart
+dockutil --add ~/Downloads --display stack
+set +x
 
 # Disable hot corners
 defaults write com.apple.dock wvous-tl-corner -int 0

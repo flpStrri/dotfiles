@@ -21,15 +21,6 @@ printf "\n\e[33m!\e[0m \e[1mFinish by doing this manual tasks:\e[0m\n"
     "    — Enable tap to click;" \
     "    — Enable three fingers drag;" \
     "— Organize Launchpad icons;" \
-    "— Install PyCharm plugins:" \
-    "    — Gruvbox theme;" \
-    "    — CamelCase;" \
-    "    — HashiCorp Terraform;" \
-    "    — Makefile support;" \
-    "    — Poetry;" \
-    "    — Toml;" \
-    "    — File Watchers ;" \
-    "— Update PyCharm default font and theme;" \
     "— Update Calendar preferences:" \
     "    — Show 5 days per week;" \
     "    — Show 6 hours a time;" \

@@ -60,6 +60,14 @@ defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 /usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:iconSize 32" ~/Library/Preferences/com.apple.finder.plist
 /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:iconSize 32" ~/Library/Preferences/com.apple.finder.plist
 
+# Update default application handlers
+set -x
+duti -s com.microsoft.VSCode net.daringfireball.markdown all
+duti -s com.microsoft.VSCode public.json all
+duti -s com.jetbrains.pycharm public.python-script all
+duti -s com.microsoft.VSCode public.yaml all
+set +x
+
 # TODO: Add ~/ to Finder sidebar
 
 # TODO: Make new Finder show ~/

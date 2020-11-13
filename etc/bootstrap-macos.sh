@@ -17,7 +17,6 @@ printf "\n\e[33m!\e[0m \e[1mFinish by doing this manual tasks:\e[0m\n"
     "— Install Camera Settings: https://support.logi.com/hc/en-ca/articles/360049055854;" \
     "— Edit Finder preferences:" \
     "    — Add ~/ to Finder sidebar;" \
-    "    — Make new Finder show ~/;" \
     "— Update Magic Trackpad preferences (in Accessibility):" \
     "    — Enable tap to click;" \
     "    — Enable three fingers drag;" \

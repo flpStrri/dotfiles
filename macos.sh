@@ -110,11 +110,8 @@ defaults write com.apple.dock show-recents -bool false
 # Update dock icons
 chmod +x ./etc/set-icon
 ./etc/set-icon assets/Slack.icns /Applications/Slack.app
-./etc/set-icon assets/NetNewsWire.icns /Applications/NetNewsWire.app
-./etc/set-icon assets/1Password.icns /Applications/1Password\ 7.app
 ./etc/set-icon assets/Pycharm.icns /Applications/Pycharm.app
 ./etc/set-icon assets/Docker.icns /Applications/Docker.app
-./etc/set-icon assets/Discord.icns /Applications/Discord.app
 ./etc/set-icon assets/AppCleaner.icns /Applications/AppCleaner.app
 ./etc/set-icon assets/VSCode.icns /Applications/Visual\ Studio\ Code.app
 

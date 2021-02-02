@@ -8,8 +8,8 @@ fi
 
 # Homebrew packages
 # --------
-brew install pyenv postgresql poetry gh trash mas terraform pre-commit dockutil duti
-brew cask install docker pycharm 1password visual-studio-code fork appcleaner discord insomnia liteicon mater postico zoomus whatsapp slack amazon-chime microsoft-excel netnewswire paw
-brew install docker-compose
+brew install postgresql poetry gh trash mas terraform pre-commit dockutil duti
+brew install python@3.9 python@3.8 python@3.7
+brew install --cask docker pycharm 1password visual-studio-code fork appcleaner liteicon mater zoomus whatsapp slack amazon-chime microsoft-excel netnewswire paw gpg-suite-no-mail pritunl meetingbar
 brew tap homebrew/cask-fonts
-brew cask install font-jetbrains-mono 
+brew install --cask font-jetbrains-mono 

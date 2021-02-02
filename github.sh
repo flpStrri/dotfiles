@@ -27,3 +27,4 @@ cd $DOTFILES_DIR
 git remote set-url origin git@github.com:flpStrri/dotfiles.git
 
 gh auth login --web
+gh config set git_protocol ssh -h github.com

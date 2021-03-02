@@ -19,7 +19,6 @@ printf "\n\e[33m!\e[0m \e[1mFinish by doing this manual tasks:\e[0m\n"
     "— Edit Finder preferences:" \
     "    — Add ~/ to Finder sidebar;" \
     "— Update Magic Trackpad preferences (in Accessibility):" \
-    "    — Enable tap to click;" \
     "    — Enable three fingers drag;" \
     "— Organize Launchpad icons;" \
     "— Update Calendar preferences:" \

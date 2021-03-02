@@ -62,7 +62,8 @@ defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
 # Update default application handlers
 set -x
-duti -s com.microsoft.VSCode net.daringfireball.markdown all
+duti -s com.microsoft.VSCode public.plain-text all
+duti -s com.microsoft.VSCode public.text all
 duti -s com.microsoft.VSCode public.json all
 duti -s com.jetbrains.pycharm public.python-script all
 duti -s com.microsoft.VSCode public.yaml all

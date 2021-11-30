@@ -11,6 +11,8 @@
 .cache
 .idea/
 .idea
+.vscode/
+.vscode
 
 # Folders to ignore
 .hg
@@ -23,6 +25,7 @@
 
 # Other stuff
 *.pyc
+.coverage
 /tmp
 
 # Project stuff

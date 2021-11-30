@@ -1,15 +1,32 @@
 [user]
-	name = João Filipe Storarri
+	name = João Filipe Storarri
 	email = 13003392+flpStrri@users.noreply.github.com
 
 [github]
   user = flpStrri
 
+[alias]
+  s = status
+  b = branch
+  co = checkout
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative --all --max-count=15
+  last = log -1 HEAD
+  cb = checkout -b
+  c = commit -m
+  br = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
+  rb = !git rebase "origin/$(git default)"
+  rbi = !git rebase -i "origin/$(git default)" 
+  default = !git remote show origin | awk '/HEAD branch/ {print $NF}'  
+  wip = !"git add -A; git ls-files --deleted -z | xargs -0 git rm; git commit -m \"wip\""
+  unwip = !"git log -n 1 | grep -q -c wip && git reset HEAD~1"
+  powre = !"git wip;git rbi;git unwip"
+  ano = !"git add . && git commit --amend --no-edit"
+
 [color]
   ui = true
 
 [core]
-  excludesfile = ~/.gitignore
+  excludesfile = /Users/flpstrri/.gitignore
 
 [format]
   pretty = %Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset %C(bold yellow)%GK%Creset
@@ -37,3 +54,15 @@
   old = red bold
   new = green bold
   whitespace = red reverse
+
+[init]
+	defaultBranch = master
+
+# [gpg]
+	# program = /usr/local/bin/gpg
+# 
+# [commit]
+	# gpgsign = true
+
+[url "git@github.com:"]
+	insteadOf = https://github.com/

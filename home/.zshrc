@@ -13,7 +13,6 @@ alias ebuild='nocorrect ebuild'
 alias gcc='nocorrect gcc'
 alias gist='nocorrect gist'
 alias grep='nocorrect grep'
-alias heroku='nocorrect heroku'
 alias ln='nocorrect ln'
 alias man='nocorrect man'
 alias mkdir='nocorrect mkdir'
@@ -92,33 +91,15 @@ alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
 # Process grep should output full paths to binaries.
 alias pgrep='pgrep -fli'
 
-# pyenv initializer
+# VPN CLI
+alias vpn="/Applications/Pritunl.app/Contents/Resources/pritunl-client"
+alias vpnp="vpn list | sed 's/ //g' | grep -v -e ID -e '+' | cut -d '|' -f2"
+alias vpnc="vpn start $(vpnp) --password"
+alias vpnd="vpn stop $(vpnp)"
+
+# Start Starship
 # --------
-if command -v pyenv 1>/dev/null 2>&1; then eval "$(pyenv init -)"; fi
-
-# Zinit's initializer
-# --------
-if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
-    print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
-    command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
-    command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" && \
-        print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
-        print -P "%F{160}▓▒░ The clone has failed.%f%b"
-fi
-
-source "$HOME/.zinit/bin/zinit.zsh"
-autoload -Uz _zinit
-(( ${+_comps} )) && _comps[zinit]=_zinit
-
-zinit light-mode for \
-    zinit-zsh/z-a-rust \
-    zinit-zsh/z-a-as-monitor \
-    zinit-zsh/z-a-patch-dl \
-    zinit-zsh/z-a-bin-gem-node \
-    denysdovhan/spaceship-prompt
-SPACESHIP_VENV_PREFIX="on "
-SPACESHIP_VENV_SUFFIX=" env "
-
+eval "$(starship init zsh)"
 
 # Homebrew Shell Completion
 # --------
@@ -128,3 +109,7 @@ if type brew &>/dev/null; then
   autoload -Uz compinit
   compinit
 fi
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# tabtab source for packages
+[[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true

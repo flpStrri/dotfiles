@@ -8,8 +8,8 @@ fi
 
 # Homebrew packages
 # --------
-brew install postgresql poetry gh trash mas terraform pre-commit dockutil duti
-brew install python@3.9 python@3.8 python@3.7
-brew install --cask docker pycharm 1password visual-studio-code fork appcleaner liteicon mater zoomus whatsapp slack amazon-chime microsoft-excel netnewswire paw gpg-suite-no-mail pritunl meetingbar
 brew tap homebrew/cask-fonts
 brew install --cask font-jetbrains-mono 
+brew install starship zsh-autosuggestions postgresql poetry gh trash mas awscli terraform pre-commit dockutil duti
+brew install python@3.10 python@3.9 python@3.8 python@3.7
+brew install --cask docker pycharm 1password visual-studio-code fork appcleaner mater zoom whatsapp slack amazon-chime netnewswire paw gpg pritunl meetingbar

@@ -58,11 +58,11 @@
 [init]
 	defaultBranch = master
 
-# [gpg]
-	# program = /usr/local/bin/gpg
-# 
-# [commit]
-	# gpgsign = true
+[gpg]
+  program = /usr/local/bin/gpg
+ 
+[commit]
+  gpgsign = true
 
 [url "git@github.com:"]
 	insteadOf = https://github.com/

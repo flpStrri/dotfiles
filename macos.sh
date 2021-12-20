@@ -114,6 +114,7 @@ chmod +x ./etc/set-icon
 ./etc/set-icon assets/Docker.icns /Applications/Docker.app
 ./etc/set-icon assets/AppCleaner.icns /Applications/AppCleaner.app
 ./etc/set-icon assets/VSCode.icns /Applications/Visual\ Studio\ Code.app
+./etc/set-icon assets/Firefox.icns /Applications/Firefox.app
 
 # Add apps to dock
 set -x

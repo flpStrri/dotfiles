@@ -62,10 +62,7 @@ defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
 # Update default application handlers
 set -x
-duti -s com.microsoft.VSCode net.daringfireball.markdown all
-duti -s com.microsoft.VSCode public.json all
 duti -s com.jetbrains.pycharm public.python-script all
-duti -s com.microsoft.VSCode public.yaml all
 set +x
 
 # TODO: Add ~/ to Finder sidebar
@@ -114,19 +111,16 @@ chmod +x ./etc/set-icon
 ./etc/set-icon assets/AppCleaner.icns /Applications/AppCleaner.app
 ./etc/set-icon assets/VSCode.icns /Applications/Visual\ Studio\ Code.app
 ./etc/set-icon assets/Firefox.icns /Applications/Firefox.app
+./etc/set-icon assets/kitty-light.icns /Applications/kitty.app
 
 # Add apps to dock
 set -x
 dockutil --remove all --no-restart          
-dockutil --add /System/Applications/Mail.app --no-restart
-dockutil --add /System/Applications/Calendar.app --no-restart
-dockutil --add /System/Applications/Reminders.app --no-restart
 dockutil --add /Applications/Safari.app --no-restart
 dockutil --add /Applications/Slack.app --no-restart
+dockutil --add /Applications/kitty.app --no-restart
 dockutil --add /Applications/PyCharm.app --no-restart
-dockutil --add /System/Applications/Utilities/Terminal.app --no-restart
 dockutil --add /System/Applications/Music.app --no-restart
-dockutil --add ~/Downloads --display stack
 set +x
 
 # Disable hot corners
@@ -163,15 +157,6 @@ defaults write com.apple.SoftwareUpdate CriticalUpdateInstall -bool true
 
 # Turn on app auto-update
 defaults write com.apple.commerce AutoUpdate -bool true
-
-# Terminal
-# --------
-# Define Gruvbox as defaut theme
-if ! defaults read com.apple.Terminal "Window Settings" | grep -Fw gruvbox-dark >/dev/null; then
-    open -a Terminal assets/Gruvbox-dark.terminal
-fi
-defaults write com.apple.terminal "Default Window Settings" -string "Gruvbox-dark"
-defaults write com.apple.terminal "Startup Window Settings" -string "Gruvbox-dark"
 
 # Kill affected applications
 # --------

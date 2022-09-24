@@ -113,3 +113,10 @@ source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # tabtab source for packages
 [[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
+
+bindkey ";3D" backward-word
+bindkey ";3C" forward-word
+bindkey ";9D" beginning-of-line
+bindkey ";9C" end-of-line
+
+export PATH="$HOME/.poetry/bin:$PATH"

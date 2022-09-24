@@ -33,7 +33,7 @@ fi
 
 # Editors.
 # --------
-# export EDITOR='/usr/local/bin/code'
+export EDITOR='usr/local/bin/hx'
 # export VISUAL='/usr/local/bin/code'
 # export PAGER='less'
 

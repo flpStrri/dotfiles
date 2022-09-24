@@ -1,5 +1,13 @@
 #!/usr/bin/env zsh
+
+DEVELOPMENT_DIR="$HOME/GitHub"
+DOTFILES_DIR="$DEVELOPMENT_DIR/dotfiles"
+
 osascript -e 'tell application "System Preferences" to quit'
+
+change_wallpaper() {
+    osascript -e "tell application \"Finder\" to set desktop picture to POSIX file \"$1\""
+}
 
 # Ask for the administrator password upfront
 sudo -v
@@ -7,8 +15,9 @@ sudo -v
 # Keep-alive: update existing `sudo` time stamp until this script has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
-# Menu bar
-# --------
+# Wallpaper
+change_wallpaper $DOTFILES_DIR/assets/wallpaper.png
+
 # Menu bar: show battery percentage
 defaults write com.apple.menuextra.battery ShowPercent YES
 
@@ -16,8 +25,6 @@ defaults write com.apple.menuextra.battery ShowPercent YES
 defaults write com.apple.menuextra.clock IsAnalog -bool false
 defaults write com.apple.menuextra.clock DateFormat -string "EEE d MMM HH:mm"
 
-# Finder
-# --------
 # Show icons for hard drives, servers, and removable media on the desktop
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
 defaults write com.apple.finder ShowHardDrivesOnDesktop -bool true
@@ -71,8 +78,6 @@ set +x
 defaults write com.apple.finder NewWindowTarget -string "PfHm"
 defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}"
 
-# Keyboard & Input
-# --------
 # Disable smart quotes and dashes
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
@@ -83,15 +88,10 @@ defaults write com.apple.BezelServices kDim -bool true
 # Turn off keyboard illumination when computer is not used for 5 minutes
 defaults write com.apple.BezelServices kDimTime -int 300
 
-# Trackpad, mouse, Bluetooth accessories
-# --------
-
 # TODO: enable tap to click for this user and for the login screen
 
 # TODO: three fingers drag
 
-# Dock
-# --------
 # Show indicator lights for open applications in the Dock
 defaults write com.apple.dock show-process-indicators -bool true
 
@@ -129,20 +129,6 @@ defaults write com.apple.dock wvous-tr-corner -int 0
 defaults write com.apple.dock wvous-bl-corner -int 0
 defaults write com.apple.dock wvous-br-corner -int 0
 
-# Mail
-# --------
-# TODO: Copy email addresses as `foo@example.com` instead of `Foo Bar <foo@example.com>` in Mail.app
-
-# TODO: Disable inline attachments (just show the icons)
-
-# Calendar
-# --------
-# TODO: Show 5 days per week
-
-# TODO: Show 6 hours a time
-
-# Software Updates
-# --------
 # Enable the automatic update check
 defaults write com.apple.SoftwareUpdate AutomaticCheckEnabled -bool true
 
@@ -159,7 +145,6 @@ defaults write com.apple.SoftwareUpdate CriticalUpdateInstall -bool true
 defaults write com.apple.commerce AutoUpdate -bool true
 
 # Kill affected applications
-# --------
 for app in "Address Book" "Calendar" "Contacts" "Dock" "Finder" "Mail" "SystemUIServer" "iCal"; do
   killall "${app}" &> /dev/null
 done

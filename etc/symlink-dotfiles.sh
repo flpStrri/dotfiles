@@ -19,7 +19,7 @@ link() {
   ln -s "$from" "$to"
 }
 
-for location in $(find home -name '.*'); do
+for location in $(find home -name '.*' -maxdepth 1); do
   file="${location##*/}"
   file="${file}"
   link "$DOTFILES_DIR/$location" "$HOME/$file"

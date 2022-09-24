@@ -1,11 +1,57 @@
 add_newline = false
 
+format = """
+$username\
+$hostname\
+$localip\
+$shlvl\
+$singularity\
+$kubernetes\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$hg_branch\
+$elixir\
+$erlang\
+$golang\
+$nodejs\
+$python\
+$rust\
+$swift\
+$terraform\
+$memory_usage\
+$env_var\
+$sudo\
+$cmd_duration\
+$line_break\
+$jobs\
+$battery\
+$time\
+$status\
+$container\
+$shell\
+$character"""
+
+[package]
+disabled = true
+
+[git_metrics]
+disabled = true
+
+[git_commit]
+commit_hash_length = 8
+style = "bold white"
+
 [character]
 success_symbol = "[➜](bold green)"
-error_symbol = "[✗](bold red) "
+error_symbol = "[✗](bold red)"
 
 [aws]
 disabled = true
 
 [python]
 detect_files = ["pyproject.toml", "requirements.txt"]
+python_binary = ["./.venv/bin/python", "./venv/bin/python", "python", "python3"]

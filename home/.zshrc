@@ -120,3 +120,5 @@ bindkey ";9D" beginning-of-line
 bindkey ";9C" end-of-line
 
 export PATH="$HOME/.poetry/bin:$PATH"
+source ~/.config/op/plugins.sh
+

@@ -25,6 +25,7 @@ export GPG_TTY=$(tty)
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 export POETRY_VIRTUALENVS_CREATE=true
 export POETRY_VIRTUALENVS_IN_PROJECT=true
+
 # Browser.
 # --------
 if [[ "$OSTYPE" == darwin* ]]; then
@@ -34,26 +35,9 @@ fi
 # Editors.
 # --------
 export EDITOR='usr/local/bin/hx'
-# export VISUAL='/usr/local/bin/code'
-# export PAGER='less'
-
-# Language.
-# ---------
-# if [[ -z "$LANG" ]]; then
-#   eval "$(locale)"
-# fi
 
 # Commonly used directories.
 # ---------
 dev="$HOME/GitHub"
 zx="$dev/ZXVentures"
 as="$HOME/Library/Application Support"
-
-# Git commit signing
-# ---------
-# export GPG_TTY=$(tty) # For git commit signing
-# gitssh="$HOME/.ssh/git"
-# if [[ -f $gitssh ]]; then
-#   export GIT_SSH_COMMAND="ssh -i $gitssh -F /dev/null"
-# fi
-# unset gitssh

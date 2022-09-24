@@ -24,7 +24,7 @@ mkdir -p /usr/local/opt/postgresql/lib
 ln -s /usr/local/opt/postgresql@14/lib/postgresql@14/libpq.5.dylib /usr/local/opt/postgresql/lib/libpq.5.dylib
 
 brew install --cask raycast 1password appcleaner slack firefox
-brew install --cask docker pycharm fork paw
+brew install --cask docker pycharm fork paw postman
 brew install helix
 
 # AB InBev Specific

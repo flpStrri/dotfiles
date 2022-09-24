@@ -93,7 +93,7 @@ alias pgrep='pgrep -fli'
 
 # VPN CLI
 alias vpn="/Applications/Pritunl.app/Contents/Resources/pritunl-client"
-alias vpnp="vpn list | sed 's/ //g' | grep -v -e ID -e '+' | cut -d '|' -f2"
+alias vpnp="vpn list | sed 's/ //g' | grep -v -e ID -e '+' | grep ZeDelivery | cut -d '|' -f2"
 alias vpnc="vpn start $(vpnp) --password"
 alias vpnd="vpn stop $(vpnp)"
 

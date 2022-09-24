@@ -6,7 +6,6 @@ printf "— \e[1mPress Enter\e[0m to start updating the Mac OS preferences..."
 source 'homebrew.sh'
 source 'github.sh'
 source 'macos.sh'
-source 'app_store.sh'
 source 'etc/symlink-dotfiles.sh'
 chmod -R go-w "$(brew --prefix)/share"
 

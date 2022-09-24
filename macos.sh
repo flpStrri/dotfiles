@@ -73,7 +73,7 @@ defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}"
 
 # Keyboard & Input
 # --------
-# Disable smart quotes and dashes as they’re annoying when typing code
+# Disable smart quotes and dashes
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 

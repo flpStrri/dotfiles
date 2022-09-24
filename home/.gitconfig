@@ -1,7 +1,7 @@
 [user]
-	name = João Filipe Storarri
-	email = 13003392+flpStrri@users.noreply.github.com
-	signingkey = E600DC87AE9894C8
+  name = João Filipe Storarri
+  email = 13003392+flpStrri@users.noreply.github.com
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAF1y7C6sHFmsrJpfnfbOV7D3ULR2uiN2LX+KWo4P73h
 
 [github]
   user = flpStrri
@@ -60,10 +60,12 @@
 	defaultBranch = master
 
 [gpg]
-  program = /usr/local/bin/gpg
+  format = ssh
  
 [commit]
   gpgsign = true
 
 [url "git@github.com:"]
-	insteadOf = https://github.com/
+  insteadOf = https://github.com/
+[gpg "ssh"]
+  program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign

@@ -7,21 +7,35 @@
   user = flpStrri
 
 [alias]
-  s = status
-  b = branch
-  co = checkout
-  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative --all --max-count=15
-  last = log -1 HEAD
-  cb = checkout -b
-  c = commit -m
-  br = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
-  rb = !git rebase "origin/$(git default)"
-  rbi = !git rebase -i "origin/$(git default)" 
-  default = !git remote show origin | awk '/HEAD branch/ {print $NF}'  
-  wip = !"git add -A; git ls-files --deleted -z | xargs -0 git rm; git commit -m \"wip\""
-  unwip = !"git log -n 1 | grep -q -c wip && git reset HEAD~1"
-  powre = !"git wip;git rbi;git unwip"
-  ano = !"git add . && git commit --amend --no-edit"
+  s         = status
+  diffo     = !git diff "origin/$(git default)"
+  b         = branch
+  br        = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
+  cb        = "!f() { git switch --progress --no-track -c "$1" "origin/$(git default)"; }; f"
+  fcb       = !git fetch && git cb
+  # Log
+  lg        = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative --max-count=15
+  lga       = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative --all --max-count=15
+  last      = log -1 HEAD
+  # Rebase
+  rb        = !git rebase "refs/remotes/origin/$(git default)"
+  rbi       = !git rebase -i "refs/remotes/origin/$(git default)" 
+  frb       = !git fetch && git rb
+  frbi      = !git fetch && git rbi
+  # WIPing
+  wip       = !"git add -A; git ls-files --deleted -z | xargs -0 git rm; git commit -m \"wip\""
+  unwip     = !"git log -n 1 | grep -q -c wip && git reset HEAD~1"
+  powre     = !"git wip;git rbi;git unwip"
+  # Commiting
+  c         = commit -m
+  ca        = commit --amend
+  amend     = commit --amend
+  cano      = commit --amend --no-edit
+  # Pushing
+  puf       = !git push origin "refs/heads/$(git cbranch)" --force-with-lease --verbose
+  # Tools
+  default   = !git remote show origin | awk '/HEAD branch/ {print $NF}'  
+  cbranch   = !git symbolic-ref --quiet HEAD | awk 'gsub(/refs\\/heads\\//, \"\")'
 
 [color]
   ui = true
@@ -43,22 +57,11 @@
   process = git-lfs filter-process
   required = true
 
-[color "diff-highlight"]
-  oldNormal = red bold
-  oldHighlight = red bold 52
-  newNormal = green bold
-  newHighlight = green bold 22
-
-[color "diff"]
-  meta = 11
-  frag = magenta bold
-  commit = yellow bold
-  old = red bold
-  new = green bold
-  whitespace = red reverse
+[diff]
+  external = difft
 
 [init]
-	defaultBranch = master
+  defaultBranch = master
 
 [gpg]
   format = ssh

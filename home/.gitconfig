@@ -12,6 +12,7 @@
   b         = branch
   br        = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
   cb        = "!f() { git switch --progress --no-track -c "$1" "origin/$(git default)"; }; f"
+  cbf        = "!f() { git switch --progress --no-track -c "$1" "$2"; }; f"
   fcb       = !git fetch && git cb
   # Log
   lg        = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative --max-count=15

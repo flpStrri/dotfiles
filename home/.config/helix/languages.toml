@@ -2,3 +2,9 @@
 name = "python"
 auto-format = true
 formatter = { command = "black" , args = ["-", "--quiet"] }
+
+[[language]]
+name = "rust"
+
+[language.config]
+checkOnSave = { command = "clippy" }

@@ -67,11 +67,6 @@ defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 /usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:iconSize 32" ~/Library/Preferences/com.apple.finder.plist
 /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:iconSize 32" ~/Library/Preferences/com.apple.finder.plist
 
-# Update default application handlers
-set -x
-duti -s com.jetbrains.pycharm public.python-script all
-set +x
-
 # TODO: Add ~/ to Finder sidebar
 
 # Make new Finder show ~/
@@ -110,7 +105,6 @@ dockutil --remove all --no-restart
 dockutil --add /Applications/Safari.app --no-restart
 dockutil --add /Applications/Slack.app --no-restart
 dockutil --add /Applications/kitty.app --no-restart
-dockutil --add /Applications/PyCharm.app --no-restart
 dockutil --add /System/Applications/Music.app --no-restart
 set +x
 

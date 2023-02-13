@@ -20,7 +20,6 @@ setopt HIST_VERIFY                      # Do not execute immediately upon histor
 privenv="$HOME/.private-env"
 [[ -f "$privenv" ]] && source $privenv
 export PATH="/usr/local/sbin:$PATH"
-export GPG_TTY=$(tty)
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 export POETRY_VIRTUALENVS_CREATE=true
 export POETRY_VIRTUALENVS_IN_PROJECT=true
@@ -34,9 +33,3 @@ fi
 # Editors.
 # --------
 export EDITOR='usr/local/bin/hx'
-
-# Commonly used directories.
-# ---------
-dev="$HOME/GitHub"
-zx="$dev/ZXVentures"
-as="$HOME/Library/Application Support"

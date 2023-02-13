@@ -1,8 +1,5 @@
 #!/usr/bin/env zsh
 
-DEVELOPMENT_DIR="$HOME/GitHub"
-DOTFILES_DIR="$DEVELOPMENT_DIR/dotfiles"
-
 # Aliases
 # --------
 # Disable correction.
@@ -90,12 +87,6 @@ alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
 
 # Process grep should output full paths to binaries.
 alias pgrep='pgrep -fli'
-
-# VPN CLI
-alias vpn="/Applications/Pritunl.app/Contents/Resources/pritunl-client"
-alias vpnp="vpn list | sed 's/ //g' | grep -v -e ID -e '+' | grep ZeDelivery | cut -d '|' -f2"
-alias vpnc="vpn start $(vpnp) --password"
-alias vpnd="vpn stop $(vpnp)"
 
 # Start Starship
 # --------

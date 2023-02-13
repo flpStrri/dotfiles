@@ -104,15 +104,6 @@ defaults write com.apple.dock mru-spaces -bool false
 # Don’t show recent applications in Dock
 defaults write com.apple.dock show-recents -bool false
 
-# Update dock icons
-chmod +x ./etc/set-icon
-./etc/set-icon assets/Pycharm.icns /Applications/Pycharm.app
-./etc/set-icon assets/Docker.icns /Applications/Docker.app
-./etc/set-icon assets/AppCleaner.icns /Applications/AppCleaner.app
-./etc/set-icon assets/VSCode.icns /Applications/Visual\ Studio\ Code.app
-./etc/set-icon assets/Firefox.icns /Applications/Firefox.app
-./etc/set-icon assets/kitty-light.icns /Applications/kitty.app
-
 # Add apps to dock
 set -x
 dockutil --remove all --no-restart          

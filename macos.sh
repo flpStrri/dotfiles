@@ -99,15 +99,6 @@ defaults write com.apple.dock mru-spaces -bool false
 # Don’t show recent applications in Dock
 defaults write com.apple.dock show-recents -bool false
 
-# Add apps to dock
-set -x
-dockutil --remove all --no-restart          
-dockutil --add /Applications/Safari.app --no-restart
-dockutil --add /Applications/Slack.app --no-restart
-dockutil --add /Applications/kitty.app --no-restart
-dockutil --add /System/Applications/Music.app --no-restart
-set +x
-
 # Disable hot corners
 defaults write com.apple.dock wvous-tl-corner -int 0
 defaults write com.apple.dock wvous-tr-corner -int 0

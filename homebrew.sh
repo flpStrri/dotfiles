@@ -10,7 +10,7 @@ fi
 # --------
 brew tap homebrew/cask-fonts
 brew install --cask font-jetbrains-mono
-brew install kitty starship zsh-autosuggestions gh trash dockutil jq difftastic httpie
+brew install kitty starship zsh-autosuggestions gh trash jq difftastic httpie
 
 brew install python@3.10 python@3.9 python@3.8 python@3.7 poetry
 brew install rust rust-analyzer

@@ -6,7 +6,6 @@ DEVELOPMENT_DIR="$HOME/GitHub"
 DOTFILES_DIR="$DEVELOPMENT_DIR/dotfiles"
 
 printf "\e[1m\e[32m?\e[39m Enter your computer password to install software updates and Xcode dev tools:\e[0m\n"
-sudo softwareupdate -i -a
 xcode-select --install
 
 mkdir -p $DEVELOPMENT_DIR

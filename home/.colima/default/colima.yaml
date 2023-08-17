@@ -1,7 +1,3 @@
-# ============================================================================================ #
-# To abort, delete the contents of this file including the comments and save as an empty file
-# ============================================================================================ #
-
 # Number of CPUs to be allocated to the virtual machine.
 # Default: 2
 cpu: 2
@@ -32,17 +28,12 @@ kubernetes:
   # Kubernetes version to use.
   # This needs to exactly match a k3s version https://github.com/k3s-io/k3s/releases
   # Default: latest stable release
-  version: v1.25.4+k3s1
+  version: v1.27.1+k3s1
   
-  # Disable k3s features [coredns servicelb traefik local-storage metrics-server].
-  # All features are enabled unless disabled.
-  #
-  # EXAMPLE - disable traefik and metrics-server
-  # disable: [traefik, metrics-server]
-  #
-  # Default: [traefik]
-  disable:
-    - traefik
+  # Additional args to pass to k3s https://docs.k3s.io/cli/server
+  # Default: traefik is disabled
+  k3sArgs:
+    - --disable=traefik
 
 # Auto-activate on the Host for client access.
 # Setting to true does the following on startup
@@ -117,6 +108,10 @@ docker: {}
 # Default: qemu
 vmType: qemu
 
+# Utilise rosetta for amd64 emulation (requires m1 mac and vmType `vz`)
+# Default: false
+rosetta: false
+
 # Volume mount driver for the virtual machine (virtiofs, 9p, sshfs).
 #
 # virtiofs is limited to macOS and vmType `vz`. It is the fastest of the options.
@@ -128,6 +123,10 @@ vmType: qemu
 #
 # Default: virtiofs (for vz), sshfs (for qemu)
 mountType: sshfs
+
+# Propagate inotify file events to the VM.
+# NOTE: this is experimental.
+mountInotify: false
 
 # The CPU type for the virtual machine (requires vmType `qemu`).
 # Options available for host emulation can be checked with: `qemu-system-$(arch) -cpu help`.
@@ -165,7 +164,7 @@ provision: []
 # Modify ~/.ssh/config automatically to include a SSH config for the virtual machine.
 # SSH config will still be generated in ~/.colima/ssh_config regardless.
 # Default: true
-sshConfig: false
+sshConfig: true
 
 # Configure volume mounts for the virtual machine.
 # Colima mounts user's home directory by default to provide a familiar

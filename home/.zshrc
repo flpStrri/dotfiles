@@ -92,6 +92,9 @@ alias pgrep='pgrep -fli'
 # --------
 eval "$(starship init zsh)"
 
+export NVM_DIR="$HOME/.nvm"
+source $(brew --prefix nvm)/nvm.sh
+
 # Homebrew Shell Completion
 # --------
 if type brew &>/dev/null; then

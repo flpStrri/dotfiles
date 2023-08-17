@@ -14,6 +14,7 @@ brew install kitty starship zsh-autosuggestions gh trash jq difftastic httpie
 
 brew install python@3.10 python@3.9 python@3.8 python@3.7 poetry
 brew install rust rust-analyzer
+brew install nvm typescript-language-server
 brew install terraform hashicorp/tap/terraform-ls
 brew install colima docker docker-credential-helper docker-compose minikube kubectl
 

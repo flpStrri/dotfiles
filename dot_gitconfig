@@ -1,0 +1,59 @@
+[user]
+  name = João Filipe Storarri
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAF1y7C6sHFmsrJpfnfbOV7D3ULR2uiN2LX+KWo4P73h
+
+[alias]
+  s         = status
+  diffo     = !git diff "origin/$(git default)"
+  b         = branch
+  br        = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
+  cb        = "!f() { git switch --progress --no-track -c "$1" "origin/$(git default)"; }; f"
+  cbf        = "!f() { git switch --progress --no-track -c "$1" "$2"; }; f"
+  fcb       = !git fetch && git cb
+  # Log
+  lg        = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative --max-count=15
+  lga       = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative --all --max-count=15
+  last      = log -1 HEAD
+  # Rebase
+  rb        = !git rebase "refs/remotes/origin/$(git default)"
+  rbi       = !git rebase -i "refs/remotes/origin/$(git default)"
+  frb       = !git fetch && git rb
+  frbi      = !git fetch && git rbi
+  # WIPing
+  wip       = !"git add -A; git ls-files --deleted -z | xargs -0 git rm; git commit -m \"wip\""
+  unwip     = !"git log -n 1 | grep -q -c wip && git reset HEAD~1"
+  powre     = !"git wip;git rbi;git unwip"
+  # Commiting
+  c         = commit -m
+  ca        = commit --amend
+  amend     = commit --amend
+  cano      = commit --amend --no-edit
+  # Pushing
+  puf       = !git push origin "refs/heads/$(git cbranch)" --force-with-lease --verbose
+  # Tools
+  default   = !git remote show origin | awk '/HEAD branch/ {print $NF}'
+  cbranch   = !git symbolic-ref --quiet HEAD | awk 'gsub(/refs\\/heads\\//, \"\")'
+
+[color]
+  ui = true
+
+[pull]
+  rebase = true
+
+[init]
+  defaultBranch = master
+
+[gpg]
+  format = ssh
+
+[commit]
+  gpgsign = true
+
+[includeIf "gitdir/i:/Users/"]
+  path = ~/.gitconfig-local
+
+[includeIf "gitdir/i:~/GitHub/"]
+  path = ~/.gitconfig-github
+
+[includeIf "gitdir/i:~/Azure/"]
+  path = ~/.gitconfig-azure

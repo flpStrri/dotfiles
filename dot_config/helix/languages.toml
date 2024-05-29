@@ -1,0 +1,41 @@
+use-grammars = { only = [ "rust", "python", "typescript", "yaml", "dockerfile", "markdown", "git-rebase", "git-commit" ] }
+
+[[language]]
+name = "python"
+auto-format = true
+formatter = { command = "black" , args = ["-", "--quiet"] }
+
+[[language]]
+name = "rust"
+roots = ["Cargo.toml", "Cargo.lock"]
+auto-format = true
+language-servers = ["rust-analyzer"]
+indent = { tab-width = 4, unit = "    " }
+
+[language.debugger]
+name = "rust-lldb"
+transport = "stdio"
+command = "rust-lldb"
+
+[[language.debugger.templates]]
+name = "binary"
+request = "launch"
+
+[[language.debugger.templates.completion]]
+completion = "filename"
+name = "binary"
+
+[language.debugger.templates.args]
+program = "{0}"
+runInTerminal = false
+
+[language-server.rust-analyzer.config]
+check.command = "clippy"
+
+[[language]]
+name = "typescript"
+auto-format = true
+
+[[language]]
+name = "markdown"
+auto-format = true

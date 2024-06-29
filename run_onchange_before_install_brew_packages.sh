@@ -36,6 +36,5 @@ cask "kitty", args: { force: true }
 cask "raycast", args: { force: true }
 cask "slack", args: { force: true }
 cask "zed", args: { force: true }
-cask "zoom", args: { force: true }
 
 EOF

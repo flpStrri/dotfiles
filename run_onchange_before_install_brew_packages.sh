@@ -9,7 +9,7 @@ brew "fd"
 brew "forgit"
 brew "fzf"
 brew "git-delta"
-brew "trash"
+brew "oh-my-posh"
 brew "zellij"
 brew "zoxide"
 brew "zsh-autosuggestions"
@@ -29,6 +29,7 @@ brew "httpie"
 brew "gh"
 brew "gitui"
 
+brew "mise"
 brew "rustup-init"
 brew "typescript-language-server"
 
@@ -40,7 +41,6 @@ cask "firefox", args: { force: true }
 cask "font-jetbrains-mono-nerd-font", args: { force: true }
 cask "font-jetbrains-mono", args: { force: true }
 cask "fork", args: { force: true }
-cask "kitty", args: { force: true }
 cask "raycast", args: { force: true }
 cask "slack", args: { force: true }
 cask "zed", args: { force: true }

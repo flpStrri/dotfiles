@@ -1,4 +1,4 @@
-theme = "catppuccin_mocha"
+theme = "catppuccin_custom"
 
 [editor]
 line-number = "relative"
@@ -19,3 +19,14 @@ render = true
 
 [editor.soft-wrap]
 enable = true
+
+[keys.normal.backspace]
+b = ":run-shell-command zellij run -f -- just build"
+r = ":run-shell-command zellij run -f -- just run"
+t = ":run-shell-command zellij run -f -- just test"
+g = ":run-shell-command zellij run -fc -- lazygit"
+f = ":run-shell-command zellij run -fc -- broot"
+h = ":run-shell-command kitty @ launch --title \"make\" --type window --cwd current --copy-env --hold zsh -c \"just test\""
+
+j = ":run-shell-command zellij run -f -- mise run start"
+l = ":run-shell-command zellij run -f -- mise run load-test"

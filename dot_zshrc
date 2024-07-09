@@ -2,11 +2,11 @@
 
 alias cl='clear'
 
-# -- alias rm to trash with `trash` --
-[[ -z "$commands[trash]" ]] || alias rm='trash' 2>&1 > /dev/null
+# -- init oh-my-posh --
+eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh.json)"
 
-# -- init Starship --
-eval "$(starship init zsh)"
+# -- init mise --
+eval "$(mise activate zsh)"
 
 # -- init Homebrew shell completion --
 if type brew &>/dev/null; then
@@ -17,48 +17,12 @@ if type brew &>/dev/null; then
 fi
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# -- init atuin --
-atuin-setup() {
-    if ! which atuin &> /dev/null; then return 1; fi
-
-    bindkey '^E' _atuin_search_widget
-    export ATUIN_NOBIND="true"
-    eval "$(atuin init zsh)"
-
-    fzf-atuin-history-widget() {
-        local selected num
-        setopt localoptions noglobsubst noposixbuiltins pipefail no_aliases 2>/dev/null
-
-        local atuin_opts="--cmd-only"
-        local fzf_opts=(
-            --height=${FZF_TMUX_HEIGHT:-80%}
-            --tac
-            "-n2..,.."
-            --tiebreak=index
-            "--query=${LBUFFER}"
-            "+m"
-            "--bind=ctrl-d:reload(atuin search $atuin_opts -c $PWD),ctrl-r:reload(atuin search $atuin_opts)"
-        )
-
-        selected=$(
-            eval "atuin search ${atuin_opts}" | fzf "${fzf_opts[@]}"
-        )
-        local ret=$?
-        if [ -n "$selected" ]; then
-            # the += lets it insert at current pos instead of replacing
-            LBUFFER+="${selected}"
-        fi
-        zle reset-prompt
-        return $ret
-    }
-    zle -N fzf-atuin-history-widget
-    bindkey '^R' fzf-atuin-history-widget
-}
-atuin-setup
-
-# -- alias eza to default ls commands --
+# -- init eza to default ls command --
 alias ls="eza --color=always"
 alias ll="eza -all --color=always --long --git --icons=always --no-user"
+
+# -- init zoxide to default cd command --
+eval "$(zoxide init --cmd cd zsh)"
 
 # -- init fzf and its plugins --
 export FZF_DEFAULT_OPTS=" \
@@ -89,3 +53,6 @@ _fzf_compgen_dir() {
 }
 eval "$(fzf --zsh)"
 [ -f $HOMEBREW_PREFIX/share/forgit/forgit.plugin.zsh ] && source $HOMEBREW_PREFIX/share/forgit/forgit.plugin.zsh
+
+# -- init atuin --
+eval "$(atuin init zsh)"

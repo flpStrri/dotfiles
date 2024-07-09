@@ -1,0 +1,59 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "version": 2,
+  "final_space": true,
+  "console_title_template": "{{ .PWD }}{{ if .Segments.Contains \"Git\" }} at {{ .Segments.Git.HEAD }} {{ .Segments.Git.BranchStatus }}{{ end }}",
+  "pallete": {
+    "overlay_1": "#7f849c"
+  },
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "git",
+          "style": "plain",
+          "foreground": "p:overlay_1",
+          "background": "transparent",
+          "template": "\t",
+          "properties": {
+            "branch_icon": "",
+            "commit_icon": "@",
+            "fetch_status": true
+          }
+        }
+      ],
+      "newline": true
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "text",
+          "style": "plain",
+          "foreground_templates": [
+            "{{if gt .Code 0}}red{{end}}",
+            "{{if eq .Code 0}}magenta{{end}}"
+          ],
+          "background": "transparent",
+          "template": "❯"
+        }
+      ],
+      "newline": true
+    }
+  ],
+  "transient_prompt": {
+    "foreground_templates": [
+      "{{if gt .Code 0}}red{{end}}",
+      "{{if eq .Code 0}}magenta{{end}}"
+    ],
+    "background": "transparent",
+    "template": "❯ "
+  },
+  "secondary_prompt": {
+    "background": "transparent",
+    "template": "   "
+  }
+}

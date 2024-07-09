@@ -8,8 +8,10 @@ brew "eza"
 brew "fd"
 brew "forgit"
 brew "fzf"
-brew "starship"
+brew "git-delta"
 brew "trash"
+brew "zellij"
+brew "zoxide"
 brew "zsh-autosuggestions"
 
 brew "colima"
@@ -24,9 +26,15 @@ brew "minikube"
 
 brew "helix"
 brew "httpie"
+brew "gh"
+brew "gitui"
+
 brew "rustup-init"
+brew "typescript-language-server"
+
 
 cask "1password", args: { force: true }
+cask "alacritty", args: { force: true }
 cask "discord", args: { force: true }
 cask "firefox", args: { force: true }
 cask "font-jetbrains-mono-nerd-font", args: { force: true }
@@ -38,3 +46,7 @@ cask "slack", args: { force: true }
 cask "zed", args: { force: true }
 
 EOF
+
+gh extension install dlvhdr/gh-dash
+
+gh extension upgrade --all

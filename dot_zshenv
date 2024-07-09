@@ -3,7 +3,7 @@
 export PATH="/usr/local/sbin:$PATH"
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
-export EDITOR='usr/local/bin/hx'
+export EDITOR='/opt/homebrew/bin/hx'
 export GH_DASH_CONFIG='~/.config/gh-dash.yml'
 
 . "$HOME/.cargo/env"

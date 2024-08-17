@@ -13,10 +13,8 @@ TERM = "xterm-256color"
 [window]
 decorations = "Buttonless"
 padding = { x = 20, y = 20 }
-
-opacity = 0.8
+opacity = 0.9
 blur = true
-
 option_as_alt = "Both"
 
 [font]

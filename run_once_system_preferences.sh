@@ -74,6 +74,12 @@ defaults write com.apple.dock minimize-to-application -bool true
 # Don’t automatically rearrange Spaces based on most recent use
 defaults write com.apple.dock mru-spaces -bool false
 
+# Group windows by application on Mission Control
+defaults write com.apple.dock expose-group-apps -bool true
+
+# Move windows with cmd + ctrl + drag
+defaults write -g NSWindowShouldDragOnGesture -bool true
+
 # Don’t show recent applications in Dock
 defaults write com.apple.dock show-recents -bool false
 

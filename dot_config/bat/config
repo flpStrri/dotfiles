@@ -1,2 +1,1 @@
-# Specify desired highlighting theme (e.g. "TwoDark").
-#--theme="TwoDark"
+--theme="catppuccin-mocha"

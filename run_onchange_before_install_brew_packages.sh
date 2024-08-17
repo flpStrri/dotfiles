@@ -2,6 +2,9 @@
 
 brew bundle --no-lock --file=/dev/stdin <<EOF
 
+tap "homebrew/bundle"
+tap "nikitabobko/tap"
+
 brew "atuin"
 brew "bat"
 brew "eza"
@@ -20,20 +23,16 @@ brew "docker-buildx"
 brew "docker-compose"
 brew "docker-credential-helper"
 
-brew "helm"
-brew "istioctl"
-brew "minikube"
-
 brew "helix"
 brew "httpie"
 brew "gh"
 brew "gitui"
 
 brew "mise"
-brew "rustup-init"
+brew "rustup"
 brew "typescript-language-server"
 
-
+cask "aerospace", args: { force: true }
 cask "1password", args: { force: true }
 cask "alacritty", args: { force: true }
 cask "discord", args: { force: true }
@@ -43,10 +42,8 @@ cask "font-jetbrains-mono", args: { force: true }
 cask "fork", args: { force: true }
 cask "raycast", args: { force: true }
 cask "slack", args: { force: true }
-cask "zed", args: { force: true }
-
 EOF
 
 gh extension install dlvhdr/gh-dash
-
 gh extension upgrade --all
+

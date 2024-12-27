@@ -4,6 +4,11 @@ which -s brew
 if [[ $? != 0 ]]; then
   echo 'Installing Homebrew...'
   NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  {{ if eq .chezmoi.os "linux" }}
+    echo >> /home/codespace/.bashrc
+    echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/codespace/.bashrc
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+  {{ end }}
 fi
 
 brew bundle --no-lock --file=/dev/stdin <<EOF

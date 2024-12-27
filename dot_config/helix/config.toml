@@ -23,6 +23,10 @@ render = true
 [editor.soft-wrap]
 enable = true
 
+[keys.normal]
+"pageup" = ["page_cursor_half_up", "align_view_center"]
+"pagedown" = ["page_cursor_half_down", "align_view_center"]
+
 [keys.normal.backspace]
 b = ":run-shell-command zellij run -f -- mise run build"
 s = ":run-shell-command zellij run -f -- mise run start"

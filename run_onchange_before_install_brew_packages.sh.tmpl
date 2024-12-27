@@ -15,27 +15,24 @@ brew "oh-my-posh"
 brew "zellij"
 brew "zoxide"
 brew "zsh-autosuggestions"
-
-{{- if (not .codespaces) -}}
+{{ if (not .codespaces) }}
 brew "colima"
 brew "docker"
 brew "docker-buildx"
 brew "docker-compose"
 brew "docker-credential-helper"
-{{- end -}}
-
+{{ end }}
 brew "helix"
 brew "httpie"
 brew "gh"
 brew "gitui"
 
 brew "mise"
-{{- if (not .codespaces) -}}
+{{- if (not .codespaces) }}
 brew "rustup"
 brew "typescript-language-server"
-{{- end -}}
-
-{{- if (not .codespaces) -}}
+{{- end }}
+{{ if (not .codespaces) }}
 cask "1password", args: { force: true }
 cask "discord", args: { force: true }
 cask "firefox", args: { force: true }
@@ -44,7 +41,7 @@ cask "font-jetbrains-mono", args: { force: true }
 cask "fork", args: { force: true }
 cask "raycast", args: { force: true }
 cask "slack", args: { force: true }
-{{- end -}}
+{{ end }}
 EOF
 
 gh extension install dlvhdr/gh-dash

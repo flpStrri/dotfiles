@@ -1,5 +1,11 @@
 #!/bin/bash
 
+which -s brew
+if [[ $? != 0 ]]; then
+  echo 'Installing Homebrew...'
+  NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+
 brew bundle --no-lock --file=/dev/stdin <<EOF
 
 tap "homebrew/bundle"

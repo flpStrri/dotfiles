@@ -16,6 +16,7 @@ if type brew &>/dev/null; then
     compinit
 fi
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+bindkey '^ ' autosuggest-accept
 
 # -- init eza to default ls command --
 alias ls="eza --color=always"

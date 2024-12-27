@@ -1,0 +1,541 @@
+[[keyboard.bindings]]
+action = "None"
+key = "Paste"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Copy"
+
+[[keyboard.bindings]]
+action = "None"
+key = "L"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "None"
+key = "L"
+mode = "~Vi|~Search"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "None"
+key = "PageUp"
+mode = "~Alt"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "None"
+key = "PageDown"
+mode = "~Alt"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Home"
+mode = "~Alt"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "None"
+key = "End"
+mode = "~Alt"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Space"
+mode = "~Search"
+mods = "Shift|Control"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Space"
+mode = "Vi|~Search"
+mods = "Shift|Control"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Escape"
+mode = "Vi|~Search"
+
+[[keyboard.bindings]]
+action = "None"
+key = "I"
+mode = "Vi|~Search"
+
+[[keyboard.bindings]]
+action = "None"
+key = "I"
+mode = "Vi|~Search"
+
+[[keyboard.bindings]]
+action = "None"
+key = "C"
+mode = "Vi|~Search"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Y"
+mode = "Vi|~Search"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "None"
+key = "E"
+mode = "Vi|~Search"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "None"
+key = "G"
+mode = "Vi|~Search"
+
+[[keyboard.bindings]]
+action = "None"
+key = "G"
+mode = "Vi|~Search"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "None"
+key = "B"
+mode = "Vi|~Search"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "None"
+key = "F"
+mode = "Vi|~Search"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "None"
+key = "U"
+mode = "Vi|~Search"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "None"
+key = "D"
+mode = "Vi|~Search"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Y"
+mode = "Vi|~Search"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Y"
+mode = "Vi|~Search"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Copy"
+mode = "Vi|~Search"
+
+[[keyboard.bindings]]
+action = "None"
+key = "V"
+mode = "Vi|~Search"
+
+[[keyboard.bindings]]
+action = "None"
+key = "V"
+mode = "Vi|~Search"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "None"
+key = "V"
+mode = "Vi|~Search"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "None"
+key = "V"
+mode = "Vi|~Search"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Return"
+mode = "Vi|~Search"
+
+[[keyboard.bindings]]
+action = "None"
+key = "K"
+mode = "Vi|~Search"
+
+[[keyboard.bindings]]
+action = "None"
+key = "J"
+mode = "Vi|~Search"
+
+[[keyboard.bindings]]
+action = "None"
+key = "H"
+mode = "Vi|~Search"
+
+[[keyboard.bindings]]
+action = "None"
+key = "L"
+mode = "Vi|~Search"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Up"
+mode = "Vi|~Search"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Down"
+mode = "Vi|~Search"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Left"
+mode = "Vi|~Search"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Right"
+mode = "Vi|~Search"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Key0"
+mode = "Vi|~Search"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Key4"
+mode = "Vi|~Search"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Key6"
+mode = "Vi|~Search"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "None"
+key = "H"
+mode = "Vi|~Search"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "None"
+key = "M"
+mode = "Vi|~Search"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "None"
+key = "L"
+mode = "Vi|~Search"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "None"
+key = "B"
+mode = "Vi|~Search"
+
+[[keyboard.bindings]]
+action = "None"
+key = "W"
+mode = "Vi|~Search"
+
+[[keyboard.bindings]]
+action = "None"
+key = "E"
+mode = "Vi|~Search"
+
+[[keyboard.bindings]]
+action = "None"
+key = "B"
+mode = "Vi|~Search"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "None"
+key = "W"
+mode = "Vi|~Search"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "None"
+key = "E"
+mode = "Vi|~Search"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Key5"
+mode = "Vi|~Search"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Slash"
+mode = "Vi|~Search"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Slash"
+mode = "Vi|~Search"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "None"
+key = "N"
+mode = "Vi|~Search"
+
+[[keyboard.bindings]]
+action = "None"
+key = "N"
+mode = "Vi|~Search"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Return"
+mode = "Search|Vi"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Escape"
+mode = "Search"
+
+[[keyboard.bindings]]
+action = "None"
+key = "C"
+mode = "Search"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "None"
+key = "U"
+mode = "Search"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "None"
+key = "W"
+mode = "Search"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "None"
+key = "P"
+mode = "Search"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "None"
+key = "N"
+mode = "Search"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Up"
+mode = "Search"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Down"
+mode = "Search"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Return"
+mode = "Search|~Vi"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Return"
+mode = "Search|~Vi"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "None"
+key = "V"
+mode = "~Vi"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "None"
+key = "C"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "None"
+key = "F"
+mode = "~Search"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "None"
+key = "B"
+mode = "~Search"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "None"
+key = "C"
+mode = "Vi|~Search"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Insert"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Key0"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Equals"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Plus"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "None"
+key = "NumpadAdd"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Minus"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "None"
+key = "NumpadSubtract"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Return"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\f"
+key = "K"
+mode = "~Vi|~Search"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "None"
+key = "K"
+mode = "~Vi|~Search"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Key0"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Equals"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Plus"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "None"
+key = "NumpadAdd"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Minus"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "None"
+key = "NumpadSubtract"
+mods = "Command"
+
+# [[keyboard.bindings]]
+# action = "None"
+# key = "V"
+# mods = "Command"
+
+[[keyboard.bindings]]
+action = "None"
+key = "T"
+mods = "Command"
+
+# [[keyboard.bindings]]
+# action = "None"
+# key = "C"
+# mods = "Command"
+
+[[keyboard.bindings]]
+action = "None"
+key = "C"
+mode = "Vi|~Search"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "None"
+key = "H"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "None"
+key = "H"
+mods = "Command|Alt"
+
+[[keyboard.bindings]]
+action = "None"
+key = "M"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "None"
+key = "Q"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "None"
+key = "W"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "None"
+key = "N"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "None"
+key = "F"
+mods = "Command|Control"
+
+[[keyboard.bindings]]
+action = "None"
+key = "F"
+mode = "~Search"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "None"
+key = "B"
+mode = "~Search"
+mods = "Command"

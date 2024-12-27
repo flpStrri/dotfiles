@@ -6,6 +6,11 @@
 *.swp
 *~
 
+# Personal workflow
+.mise.toml
+working-memory
+out
+
 # OS or Editor folders
 .DS_Store
 .cache

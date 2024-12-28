@@ -4,8 +4,5 @@ export PATH="/usr/local/sbin:$PATH"
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 export EDITOR='/opt/homebrew/bin/hx'
-export GH_DASH_CONFIG='~/.config/gh-dash.yml'
 
 export COLIMA_SAVE_CONFIG=0
-
-. "$HOME/.cargo/env"

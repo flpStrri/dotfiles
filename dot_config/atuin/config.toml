@@ -1,7 +1,3 @@
-## default timezone to use when displaying time
-## either "l", "local" to use the system's current local timezone, or an offset
-## from UTC in the format of "<+|->H[H][:M[M][:S[S]]]"
-## for example: "+9", "-05", "+03:30", "-01:23:45", etc.
 timezone = "local"
 
 auto_sync = false
@@ -9,7 +5,7 @@ update_check = false
 enter_accept = true
 
 [stats]
-# Set commands where we should consider the subcommand for statistics. Eg, kubectl get vs just kubectl
+# Set commands where we should consider the subcommand for statistics.
 common_subcommands = ["cargo", "git", "npm", "hatch", "kubectl", "helm"]
-# Set commands that should be totally stripped and ignored from stats
+# Set commands that should be totally stripped and ignored from stats.
 common_prefix = ["sudo"]

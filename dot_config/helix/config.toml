@@ -1,11 +1,11 @@
 theme = "catppuccin_custom"
 
 [editor]
-shell = ["zsh", "-c"]
+# shell = ["zsh", "-c"]
 line-number = "relative"
 mouse = true
 cursorline = true
-color-modes = true
+# color-modes = true
 completion-replace = true
 rulers = [80]
 auto-pairs = false
@@ -60,6 +60,7 @@ K="move_next_long_word_end"
 [keys.normal.g]
 h="goto_line_start"
 i="goto_line_end"
+
 n="move_line_down"
 e="move_line_up"
 

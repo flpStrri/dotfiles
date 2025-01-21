@@ -15,16 +15,10 @@ brew bundle --no-lock --file=/dev/stdin <<EOF
 
 tap "homebrew/bundle"
 
-brew "atuin"
-brew "eza"
-brew "fd"
-brew "forgit"
+brew "fish"
 brew "fzf"
-brew "git-delta"
-brew "oh-my-posh"
-brew "zellij"
-brew "zoxide"
-brew "zsh-autosuggestions"
+brew "less"
+
 {{ if (not .codespaces) }}
 brew "colima"
 brew "docker"
@@ -32,11 +26,10 @@ brew "docker-buildx"
 brew "docker-compose"
 brew "docker-credential-helper"
 {{ end }}
+
 brew "helix"
 brew "httpie"
 brew "gh"
-
-brew "mise"
 
 {{ if (not .codespaces) }}
 cask "1password", args: { force: true }
@@ -50,3 +43,5 @@ cask "slack", args: { force: true }
 {{ end }}
 EOF
 
+# echo /opt/homebrew/bin/fish | sudo tee -a /etc/shells
+# chsh -s /opt/homebrew/bin/fish

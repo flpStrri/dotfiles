@@ -1,0 +1,19 @@
+# Environment Variables
+set -gx EDITOR hx
+set -gx VISUAL $EDITOR
+set -gx PAGER less
+set -gx MANPAGER $PAGER
+set -gx LANG en_US.UTF-8
+set -gx LC_ALL en_US.UTF-8
+
+# Path configuration
+fish_add_path /opt/homebrew/bin
+fish_add_path $HOME/.local/bin
+
+{{ if .codespaces }}
+fish_add_path /home/linuxbrew/.linuxbrew/bin
+{{ end }}
+
+# Suppress greeting
+set -U fish_greeting
+

@@ -22,17 +22,11 @@
   rbi       = !git rebase -i "refs/remotes/origin/$(git default)"
   frb       = !git fetch && git rb
   frbi      = !git fetch && git rbi
-  # WIPing
-  wip       = !"git add -A; git ls-files --deleted -z | xargs -0 git rm; git commit -m \"wip\""
-  unwip     = !"git log -n 1 | grep -q -c wip && git reset HEAD~1"
-  powre     = !"git wip;git rbi;git unwip"
   # Commiting
   c         = commit -m
   ca        = commit --amend
   amend     = commit --amend
   cano      = commit --amend --no-edit
-  # Pushing
-  puf       = !git push origin "refs/heads/$(git cbranch)" --force-with-lease --verbose
   # Tools
   default   = !git remote show origin | awk '/HEAD branch/ {print $NF}'
   cbranch   = !git symbolic-ref --quiet HEAD | awk 'gsub(/refs\\/heads\\//, \"\")'

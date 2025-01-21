@@ -1,15 +1,20 @@
 theme = "catppuccin_custom"
 
 [editor]
+shell = ["zsh", "-c"]
 line-number = "relative"
 mouse = true
 cursorline = true
 color-modes = true
+completion-replace = true
+rulers = [80]
+auto-pairs = false
+
+[editor.auto-save.after-delay]
+enable = true
 
 [editor.cursor-shape]
 insert = "bar"
-normal = "block"
-select = "underline"
 
 [editor.file-picker]
 hidden = false
@@ -23,10 +28,6 @@ render = true
 [editor.soft-wrap]
 enable = true
 
-[keys.normal]
-"pageup" = ["page_cursor_half_up", "align_view_center"]
-"pagedown" = ["page_cursor_half_down", "align_view_center"]
-
 [keys.normal.backspace]
 b = ":run-shell-command zellij run -f -- mise run build"
 s = ":run-shell-command zellij run -f -- mise run start"
@@ -35,5 +36,64 @@ L = ":run-shell-command zellij run -f -- mise run lint-fix"
 t = ":run-shell-command zellij run -f -- mise run test"
 T = ":run-shell-command zellij run -f -- mise run test-watch"
 
-g = ":run-shell-command zellij run -fc -- lazygit"
-f = ":run-shell-command zellij run -fc -- broot"
+# Move keys remap for the Voyager Colemak-DHm layout
+[keys.normal]
+# m="move_char_left"
+n="move_line_down"
+e="move_line_up"
+i="move_char_right"
+
+"pageup" = ["page_cursor_half_up", "align_view_center"]
+"pagedown" = ["page_cursor_half_down", "align_view_center"]
+"C-n" = ["page_cursor_half_down", "align_view_center"]
+"C-e" = ["page_cursor_half_up", "align_view_center"]
+
+l="insert_mode"
+L="insert_at_line_start"
+
+j="search_next"
+J="search_prev"
+
+k="move_next_word_end"
+K="move_next_long_word_end"
+
+[keys.normal.g]
+h="goto_line_start"
+i="goto_line_end"
+n="move_line_down"
+e="move_line_up"
+
+[keys.normal.space.w]
+h="jump_view_left"
+n="jump_view_down"
+e="jump_view_up"
+i="jump_view_right"
+
+[keys.normal.C-w]
+h="jump_view_left"
+n="jump_view_down"
+e="jump_view_up"
+i="jump_view_right"
+
+[keys.select]
+h="move_char_left"
+n="move_line_down"
+e="move_line_up"
+i="move_char_right"
+
+l="insert_mode"
+L="insert_at_line_start"
+
+j="search_next"
+J="search_prev"
+
+k="move_next_word_end"
+K="move_next_long_word_end"
+
+[keys.normal.z]
+n="scroll_down"
+e="scroll_up"
+
+[keys.normal.Z]
+n="scroll_down"
+e="scroll_up"

@@ -1,0 +1,22 @@
+[
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      "left": "vim::Left",
+      "h": "vim::Left",
+      "down": "vim::Down",
+      "n": "vim::Down",
+      "up": "vim::Up",
+      "e": "vim::Up",
+      "right": "vim::Right",
+      "i": "vim::Right"
+    }
+  },
+  {
+    "context": "vim_mode == normal",
+    "bindings": {
+      "l": "vim::InsertBefore",
+      "shift-l": "vim::InsertFirstNonWhitespace"
+    }
+  }
+]

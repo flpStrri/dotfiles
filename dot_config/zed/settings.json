@@ -7,17 +7,21 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "features": {
+    "edit_prediction_provider": "zed"
+  },
   "assistant": {
     "default_model": {
       "provider": "zed.dev",
-      "model": "claude-3-5-sonnet-latest"
+      "model": "claude-3-7-sonnet-latest"
     },
     "version": "2"
   },
-  "inline_completions": {
+  "edit_predictions": {
     "disabled_globs": [".env", ""]
   },
   "vim": {
+    "use_system_clipboard": "always",
     "toggle_relative_line_numbers": true
   },
   "vim_mode": true,
@@ -33,7 +37,7 @@
       "milliseconds": 1000
     }
   },
-    "restore_on_startup": "none",
-   "auto_update": false,
-   
+  "use_autoclose": false,
+  "restore_on_startup": "none",
+  "auto_update": false
 }

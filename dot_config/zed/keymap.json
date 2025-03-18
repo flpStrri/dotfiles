@@ -9,14 +9,38 @@
       "up": "vim::Up",
       "e": "vim::Up",
       "right": "vim::Right",
-      "i": "vim::Right"
+      "i": "vim::Right",
+      "space f": "file_finder::Toggle",
+      "space b": "tab_switcher::Toggle"
     }
   },
   {
     "context": "vim_mode == normal",
     "bindings": {
       "l": "vim::InsertBefore",
-      "shift-l": "vim::InsertFirstNonWhitespace"
+      "shift-l": "vim::InsertFirstNonWhitespace",
+      "shift-n": ["workspace::SendKeystrokes", "pagedown z z"],
+      "shift-e": ["workspace::SendKeystrokes", "pageup z z"]
+    }
+  },
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "h": "project_panel::CollapseSelectedEntry",
+      "l": "project_panel::ExpandSelectedEntry",
+      "n": "menu::SelectNext",
+      "e": "menu::SelectPrev",
+      "o": "menu::Confirm",
+      "r": "project_panel::Rename",
+      "z c": "project_panel::CollapseSelectedEntry",
+      "z o": "project_panel::ExpandSelectedEntry",
+      "x": "project_panel::Cut",
+      "c": "project_panel::Copy",
+      "p": "project_panel::Paste",
+      "d": "project_panel::Delete",
+      "a": "project_panel::NewFile",
+      "shift-a": "project_panel::NewDirectory",
+      "shift-y": "workspace::CopyPath"
     }
   }
 ]

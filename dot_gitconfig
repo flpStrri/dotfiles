@@ -7,6 +7,7 @@
 
 [alias]
   s         = status
+  st        = !fish -c "git-st"
   diffo     = !git diff "origin/$(git default)"
   b         = branch
   br        = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate

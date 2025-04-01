@@ -17,3 +17,9 @@ fish_add_path /home/linuxbrew/.linuxbrew/bin
 # Suppress greeting
 set -U fish_greeting
 
+if status is-interactive
+	export ZELLIJ_CONFIG_DIR=$HOME/.config/zellij
+	if [ "$TERM" = "xterm-ghostty" ]
+		eval (zellij setup --generate-auto-start fish | string collect)
+	end
+end

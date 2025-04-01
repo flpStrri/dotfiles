@@ -30,15 +30,3 @@ set -U fish_pager_color_description 6c7086
 # Prompt configuration
 set -g fish_prompt_pwd_dir_length 1
 set -g fish_prompt_pwd_full_dirs 1
-
-function fish_prompt
-    set -l pwd_info (set_color cba6f7)(prompt_pwd)
-    set -l git_info
-    
-    if git rev-parse --is-inside-work-tree >/dev/null 2>&1
-        set -l git_branch (git symbolic-ref --short HEAD 2>/dev/null; or git rev-parse --short HEAD 2>/dev/null)
-        set git_info " "(set_color 6c7086)"$git_branch"
-    end
-    
-    echo -n "$pwd_info$git_info"(set_color cba6f7)" ⇒ "
-end

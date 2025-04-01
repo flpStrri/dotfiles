@@ -36,9 +36,16 @@ L = ":run-shell-command zellij run -f -- mise run lint-fix"
 t = ":run-shell-command zellij run -f -- mise run test"
 T = ":run-shell-command zellij run -f -- mise run test-watch"
 
+[keys.normal.space.t]
+f = ":format"
+w = ":write"
+c = ":buffer-close"
+n = ":buffer-next"
+p = ":buffer-previous"
+
 # Move keys remap for the Voyager Colemak-DHm layout
 [keys.normal]
-# m="move_char_left"
+h="move_char_left"
 n="move_line_down"
 e="move_line_up"
 i="move_char_right"
@@ -60,7 +67,6 @@ K="move_next_long_word_end"
 [keys.normal.g]
 h="goto_line_start"
 i="goto_line_end"
-
 n="move_line_down"
 e="move_line_up"
 

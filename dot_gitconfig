@@ -14,6 +14,8 @@
   cb        = "!f() { git switch --progress --no-track -c "$1" "origin/$(git default)"; }; f"
   cbf        = "!f() { git switch --progress --no-track -c "$1" "$2"; }; f"
   fcb       = !git fetch && git cb
+  fap       = fetch --all --prune
+  purr      = pull --rebase
   # Log
   lg        = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative --max-count=15
   lga       = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative --all --max-count=15
@@ -33,9 +35,11 @@
   cbranch   = !git symbolic-ref --quiet HEAD | awk 'gsub(/refs\\/heads\\//, \"\")'
 
 [color]
+fap
   ui = true
 
 [core]
+fap
   pager = delta
 
 [interactive]

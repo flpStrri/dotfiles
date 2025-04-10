@@ -52,8 +52,8 @@ i="move_char_right"
 
 "pageup" = ["page_cursor_half_up", "align_view_center"]
 "pagedown" = ["page_cursor_half_down", "align_view_center"]
-"C-n" = ["page_cursor_half_down", "align_view_center"]
-"C-e" = ["page_cursor_half_up", "align_view_center"]
+"N" = ["page_cursor_half_down", "align_view_center"]
+"E" = ["page_cursor_half_up", "align_view_center"]
 
 l="insert_mode"
 L="insert_at_line_start"
@@ -104,3 +104,6 @@ e="scroll_up"
 [keys.normal.Z]
 n="scroll_down"
 e="scroll_up"
+
+[keys.insert]
+C-p="signature_help"

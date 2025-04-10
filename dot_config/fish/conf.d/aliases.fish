@@ -8,9 +8,5 @@ alias ll 'ls -lah'
 # alias cat 'bat --style=plain'
 alias grep 'grep --color=auto'
 
-# Git shortcuts
+# Git shortcut
 alias g git
-alias gs git-st
-alias gc 'git commit'
-alias gp 'git push'
-alias gl 'git pull'

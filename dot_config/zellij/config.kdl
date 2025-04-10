@@ -31,12 +31,11 @@ keybinds clear-defaults=true {
         bind "Ctrl p" { SwitchToMode "normal"; }
         bind "tab" { SwitchFocus; }
         bind "p" { NewPane; SwitchToMode "Normal"; }
-        bind "h" "Left" { MoveFocus "left"; }
-        bind "n" "Down" { MoveFocus "down"; }
-        bind "e" "Up" { MoveFocus "up"; }
-        bind "i" "Right" { MoveFocus "right"; }
+        bind "h" { MoveFocus "left"; }
+        bind "n" { MoveFocus "down"; }
+        bind "e" { MoveFocus "up"; }
+        bind "i" { MoveFocus "right"; }
         bind "d" { NewPane "down"; SwitchToMode "normal"; }
-        bind "r" { NewPane "right"; SwitchToMode "normal"; }
         bind "f" { ToggleFocusFullscreen; SwitchToMode "normal"; }
         bind "w" { ToggleFloatingPanes; SwitchToMode "normal"; }
         bind "z" { TogglePaneFrames; SwitchToMode "normal"; }
@@ -173,10 +172,7 @@ plugins {
 }
 
 load_plugins {}
-simplified_ui false
 theme "catppuccin-mocha"
-default_layout "default"
-pane_frames true
 support_kitty_keyboard_protocol true
-show_startup_tips true
+show_startup_tips false
 show_release_notes true

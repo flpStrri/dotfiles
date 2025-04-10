@@ -10,16 +10,12 @@ set -gx LC_ALL en_US.UTF-8
 fish_add_path /opt/homebrew/bin
 fish_add_path $HOME/.local/bin
 
-{{ if .codespaces }}
-fish_add_path /home/linuxbrew/.linuxbrew/bin
-{{ end }}
-
 # Suppress greeting
 set -U fish_greeting
 
 if status is-interactive
-	export ZELLIJ_CONFIG_DIR=$HOME/.config/zellij
-	if [ "$TERM" = "xterm-ghostty" ]
-		eval (zellij setup --generate-auto-start fish | string collect)
-	end
+    export ZELLIJ_CONFIG_DIR=$HOME/.config/zellij
+    if [ "$TERM" = xterm-ghostty ]
+        eval (zellij setup --generate-auto-start fish | string collect)
+    end
 end

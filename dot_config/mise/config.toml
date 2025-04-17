@@ -1,5 +1,3 @@
 [settings]
 pipx_uvx = true
-
-[tools]
-go = "latest"
+experimental = true

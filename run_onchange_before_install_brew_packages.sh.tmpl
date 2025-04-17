@@ -11,13 +11,15 @@ if [[ $? != 0 ]]; then
   {{ end }}
 fi
 
-brew bundle --no-lock --file=/dev/stdin <<EOF
+brew bundle --upgrade --file=/dev/stdin <<EOF
 
 tap "homebrew/bundle"
 
 brew "fish"
+brew "zellij"
 brew "fzf"
 brew "less"
+brew "git-delta"
 
 {{ if (not .codespaces) }}
 brew "colima"
@@ -27,21 +29,22 @@ brew "docker-compose"
 brew "docker-credential-helper"
 {{ end }}
 
+brew "mise"
 brew "helix"
 brew "httpie"
 brew "gh"
+brew "jq"
 
 {{ if (not .codespaces) }}
 cask "1password", args: { force: true }
-cask "discord", args: { force: true }
 cask "firefox", args: { force: true }
 cask "font-jetbrains-mono-nerd-font", args: { force: true }
 cask "font-jetbrains-mono", args: { force: true }
 cask "fork", args: { force: true }
+cask "ghostty", args: { force: true }
+cask "homerow", args: { force: true }
 cask "raycast", args: { force: true }
 cask "slack", args: { force: true }
 {{ end }}
 EOF
 
-# echo /opt/homebrew/bin/fish | sudo tee -a /etc/shells
-# chsh -s /opt/homebrew/bin/fish

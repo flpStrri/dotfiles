@@ -26,6 +26,7 @@
   frb       = !git fetch && git rb
   frbi      = !git fetch && git rbi
   # Commiting
+  aa        = add .
   c         = commit -m
   ca        = commit --amend
   amend     = commit --amend

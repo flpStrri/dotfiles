@@ -13,6 +13,7 @@ formatter = { command = "black" , args = ["-", "--quiet"] }
 name = "go"
 roots = ["go.work", "go.mod"]
 auto-format = true
+formatter = { command = "gofmt" }
 comment-token = "//"
 language-servers = [ "gopls"]
 

@@ -5,6 +5,7 @@ set -gx PAGER less
 set -gx MANPAGER $PAGER
 set -gx LANG en_US.UTF-8
 set -gx LC_ALL en_US.UTF-8
+set -gx COLIMA_SAVE_CONFIG 0
 
 # Path configuration
 fish_add_path /opt/homebrew/bin
@@ -14,8 +15,9 @@ fish_add_path $HOME/.local/bin
 set -U fish_greeting
 
 if status is-interactive
-    export ZELLIJ_CONFIG_DIR=$HOME/.config/zellij
+    atuin init fish | source
     if [ "$TERM" = xterm-ghostty ]
+        export ZELLIJ_CONFIG_DIR=$HOME/.config/zellij
         eval (zellij setup --generate-auto-start fish | string collect)
     end
 end

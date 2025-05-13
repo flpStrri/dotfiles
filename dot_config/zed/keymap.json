@@ -1,36 +1,37 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
 [
   {
-    "context": "VimControl && !menu",
+    "context": "Workspace",
     "bindings": {
-      "space f": "file_finder::Toggle",
-      "space b": "tab_switcher::Toggle"
+      // "shift shift": "file_finder::Toggle"
     }
   },
   {
-    "context": "vim_mode == normal",
+    "context": "Editor",
     "bindings": {
-      "shift-down": ["workspace::SendKeystrokes", "pagedown z z"],
-      "shift-up": ["workspace::SendKeystrokes", "pageup z z"]
+      // "j k": ["workspace::SendKeystrokes", "escape"]
     }
   },
   {
-    "context": "ProjectPanel && not_editing",
+    "context": "VimControl && !menu && vim_mode != operator",
     "bindings": {
-      // "back": "project_panel::CollapseSelectedEntry",
-      // "l": "project_panel::ExpandSelectedEntry",
-      // "n": "menu::SelectNext",
-      // "e": "menu::SelectPrev",
-      // "o": "menu::Confirm",
-      // "r": "project_panel::Rename",
-      // "z c": "project_panel::CollapseSelectedEntry",
-      // "z o": "project_panel::ExpandSelectedEntry",
-      // "x": "project_panel::Cut",
-      // "c": "project_panel::Copy",
-      // "p": "project_panel::Paste",
-      // "d": "project_panel::Delete",
-      // "a": "project_panel::NewFile",
-      // "shift-a": "project_panel::NewDirectory",
-      // "shift-y": "workspace::CopyPath"
+      "w": "vim::NextSubwordStart",
+      "b": "vim::PreviousSubwordStart",
+      "e": "vim::NextSubwordEnd",
+      "g e": "vim::PreviousSubwordEnd"
+    }
+  },
+  {
+    "context": "vim_mode == normal || vim_mode == visual",
+    "bindings": {
+      "s": "vim::PushSneak",
+      "shift-s": "vim::PushSneakBackward"
     }
   }
 ]

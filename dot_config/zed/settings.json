@@ -10,7 +10,7 @@
   "features": {
     "edit_prediction_provider": "zed"
   },
-  "assistant": {
+  "agent": {
     "default_model": {
       "provider": "zed.dev",
       "model": "claude-3-7-sonnet-latest"
@@ -18,32 +18,70 @@
     "version": "2"
   },
   "edit_predictions": {
-    "disabled_globs": [".env", ""]
-  },
-  "vim": {
-    "use_system_clipboard": "always",
-    "toggle_relative_line_numbers": true
+    "disabled_globs": [".env"]
   },
   "vim_mode": true,
-  "ui_font_size": 16,
+  "vim": {
+    "default_mode": "normal",
+    "use_system_clipboard": "never",
+    "toggle_relative_line_numbers": true,
+    "cursor_shape": {
+      "normal": "block",
+      "visual": "block",
+      "insert": "bar"
+    }
+  },
+  "tab_bar": {
+    // "show": false
+  },
+  "scrollbar": { "show": "never" },
+  "tabs": { "show_diagnostics": "all" },
+  "indent_guides": {
+    "enabled": true,
+    "coloring": "indent_aware"
+  },
+  "inlay_hints": {
+    "enabled": true
+  },
+
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "collaboration_panel": {
+    "dock": "right"
+  },
+  // Move some unnecessary panels to the left
+  "notification_panel": { "dock": "right" },
+  "chat_panel": {
+    "dock": "left"
+  },
+  "base_keymap": null,
+  "cursor_blink": false,
+
   "buffer_font_family": "JetBrains Mono",
   "buffer_font_size": 18,
+
   "theme": {
     "dark": "Catppuccin Mocha",
     "light": "Catppuccin Latte"
   },
-  // "autosave": {
-  //   "after_delay": {
-  //     "milliseconds": 1000
-  //   }
-  // },
+  "icon_theme": "Catppuccin Mocha",
+  "ui_font_size": 16,
   "format_on_save": "on",
+  "show_whitespaces": "all",
   "use_autoclose": false,
+  "autosave": "on_focus_change",
   "restore_on_startup": "none",
   "auto_update": false,
+  "terminal": {
+    "env": {
+      "EDITOR": "zed --wait"
+    }
+  },
   "languages": {
     "Python": {
-      "language_servers": ["ruff", "pyright"],
+      "language_servers": ["pyright", "ruff"],
       "format_on_save": "on",
       "formatter": [
         {

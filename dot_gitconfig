@@ -36,12 +36,11 @@
   cbranch   = !git symbolic-ref --quiet HEAD | awk 'gsub(/refs\\/heads\\//, \"\")'
 
 [color]
-fap
   ui = true
 
 [core]
-fap
   pager = delta
+  excludesfile = ~/.gitignore
 
 [interactive]
   diffFilter = delta --color-only

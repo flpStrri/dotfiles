@@ -18,6 +18,8 @@ out
 .idea
 .vscode/
 .vscode
+.zed/
+.zed
 
 # Folders to ignore
 .hg

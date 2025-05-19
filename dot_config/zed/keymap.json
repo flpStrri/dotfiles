@@ -19,12 +19,48 @@
     }
   },
   {
+    "context": "Dock || Terminal || Editor",
+    "bindings": {
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-j": "workspace::ActivatePaneDown",
+      "ctrl-c": "workspace::CloseAllDocks"
+    }
+  },
+  {
+    "context": "Editor && VimControl && !VimWaiting && !menu",
+    "bindings": {
+      "space": "command_palette::Toggle",
+      "space d": "diagnostics::Deploy",
+      "space f": "file_finder::Toggle",
+      "space b b": "tab_switcher::Toggle",
+      "space b c": "pane::CloseActiveItem",
+      "space b w": "workspace::Save",
+      "space b l": "pane::AlternateFile",
+      "space p a": "agent::ToggleFocus",
+      "space p g": "git_panel::ToggleFocus",
+      "space p p": "project_panel::ToggleFocus",
+      "space p o": "outline::Toggle",
+      "space t t": "terminal_panel::ToggleFocus",
+      "space t enter": "workspace::NewCenterTerminal",
+      "space e": "workspace::ToggleLeftDock",
+      "space /": "workspace::NewSearch"
+    }
+  },
+  {
     "context": "VimControl && !menu && vim_mode != operator",
     "bindings": {
       "w": "vim::NextSubwordStart",
       "b": "vim::PreviousSubwordStart",
       "e": "vim::NextSubwordEnd",
-      "g e": "vim::PreviousSubwordEnd"
+      "g e": "vim::PreviousSubwordEnd",
+
+      // Task menu
+      "backspace r": "task::Rerun",
+      "backspace s": ["task::Spawn", { "task_name": "start" }],
+      "backspace t": ["task::Spawn", { "task_name": "test" }],
+      "backspace l": ["task::Spawn", { "task_name": "lint" }]
     }
   },
   {
@@ -32,6 +68,12 @@
     "bindings": {
       "s": "vim::PushSneak",
       "shift-s": "vim::PushSneakBackward"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "space t t": "pane::CloseActiveItem" // close the terminal
     }
   }
 ]

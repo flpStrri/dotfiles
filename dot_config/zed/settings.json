@@ -11,15 +11,17 @@
     "edit_prediction_provider": "zed"
   },
   "agent": {
+    "default_profile": "write",
     "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-3-7-sonnet-latest"
+      "provider": "copilot_chat",
+      "model": "claude-3.7-sonnet"
     },
     "version": "2"
   },
   "edit_predictions": {
     "disabled_globs": [".env"]
   },
+
   "vim_mode": true,
   "vim": {
     "default_mode": "normal",
@@ -31,53 +33,43 @@
       "insert": "bar"
     }
   },
-  "tab_bar": {
-    // "show": false
+
+  "buffer_font_family": "JetBrains Mono",
+  "buffer_font_size": 18,
+  "show_whitespaces": "all",
+  "cursor_blink": false,
+  "base_keymap": null,
+  "indent_guides": { "enabled": true, "coloring": "indent_aware" },
+  "inlay_hints": { "enabled": true },
+
+  "theme": {
+    "dark": "Catppuccin Mocha (Blue Blur+)",
+    "light": "Catppuccin Latte (Blue Blur+)"
   },
+  "icon_theme": "Catppuccin Mocha",
+  "ui_font_size": 16,
   "scrollbar": { "show": "never" },
   "tabs": { "show_diagnostics": "all" },
-  "indent_guides": {
-    "enabled": true,
-    "coloring": "indent_aware"
-  },
-  "inlay_hints": {
-    "enabled": true
-  },
+  "format_on_save": "on",
+  "use_autoclose": false,
+  "autosave": "on_focus_change",
+  "restore_on_startup": "none",
+  "collaboration_panel": { "dock": "right" },
+  "notification_panel": { "dock": "right" },
+  "chat_panel": { "dock": "left" },
+  "outline_panel": { "dock": "right" },
+  "auto_update": false,
 
   "telemetry": {
     "diagnostics": false,
     "metrics": false
   },
-  "collaboration_panel": {
-    "dock": "right"
-  },
-  // Move some unnecessary panels to the left
-  "notification_panel": { "dock": "right" },
-  "chat_panel": {
-    "dock": "left"
-  },
-  "base_keymap": null,
-  "cursor_blink": false,
 
-  "buffer_font_family": "JetBrains Mono",
-  "buffer_font_size": 18,
-
-  "theme": {
-    "dark": "Catppuccin Mocha",
-    "light": "Catppuccin Latte"
-  },
-  "icon_theme": "Catppuccin Mocha",
-  "ui_font_size": 16,
-  "format_on_save": "on",
-  "show_whitespaces": "all",
-  "use_autoclose": false,
-  "autosave": "on_focus_change",
-  "restore_on_startup": "none",
-  "auto_update": false,
   "terminal": {
     "env": {
       "EDITOR": "zed --wait"
-    }
+    },
+    "detect_venv": { "on": { "activate_script": "fish" } }
   },
   "languages": {
     "Python": {

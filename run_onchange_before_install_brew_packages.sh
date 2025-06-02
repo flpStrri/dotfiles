@@ -8,8 +8,6 @@ fi
 
 brew bundle --upgrade --file=/dev/stdin <<EOF
 
-tap "homebrew/bundle"
-
 brew "fish"
 brew "zellij"
 brew "fzf"

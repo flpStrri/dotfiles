@@ -1,9 +1,0 @@
-[core]
-  excludesfile = /Users/flpstrri/.gitignore
-  editor = /opt/homebrew/bin/hx
-
-[url "git@github.com:"]
-  insteadOf = https://github.com/
-
-[gpg "ssh"]
-  program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign

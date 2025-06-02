@@ -1,4 +1,3 @@
 version: 1
 git_protocol: ssh
 prompt: enabled
-browser: Firefox

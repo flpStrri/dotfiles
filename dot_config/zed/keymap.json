@@ -21,10 +21,10 @@
   {
     "context": "Dock || Terminal || Editor",
     "bindings": {
-      "ctrl-h": "workspace::ActivatePaneLeft",
-      "ctrl-l": "workspace::ActivatePaneRight",
-      "ctrl-k": "workspace::ActivatePaneUp",
-      "ctrl-j": "workspace::ActivatePaneDown",
+      "ctrl-m": "workspace::ActivatePaneLeft",
+      "ctrl-n": "workspace::ActivatePaneDown",
+      "ctrl-e": "workspace::ActivatePaneUp",
+      "ctrl-i": "workspace::ActivatePaneRight",
       "ctrl-c": "workspace::CloseAllDocks"
     }
   },
@@ -64,6 +64,12 @@
     }
   },
   {
+    "context": "VimControl && vim_mode == normal",
+    "bindings": {
+      "shift-u": "vim::Redo"
+    }
+  },
+  {
     "context": "vim_mode == normal || vim_mode == visual",
     "bindings": {
       "s": "vim::PushSneak",
@@ -73,7 +79,14 @@
   {
     "context": "Terminal",
     "bindings": {
-      "space t t": "pane::CloseActiveItem" // close the terminal
+      "space t t": "pane::CloseActiveItem"
+    }
+  },
+  {
+    "context": "EmptyPane || SharedScreen",
+    "bindings": {
+      "space f": "file_finder::Toggle",
+      "space p": "projects::OpenRecent"
     }
   }
 ]

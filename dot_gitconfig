@@ -68,9 +68,6 @@
 [commit]
   gpgsign = true
 
-[includeIf "gitdir/i:/Users/"]
-  path = ~/.gitconfig-local
-
 [includeIf "gitdir/i:~/GitHub/"]
   path = ~/.gitconfig-github
 

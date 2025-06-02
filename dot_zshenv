@@ -1,8 +1,0 @@
-#!/usr/bin/env zsh
-
-# export PATH="/usr/local/sbin:$PATH"
-# export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
-
-# export EDITOR='/opt/homebrew/bin/hx'
-
-# export COLIMA_SAVE_CONFIG=0

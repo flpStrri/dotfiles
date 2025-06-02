@@ -1,0 +1,32 @@
+[
+  {
+    "label": "start",
+    "command": "make start",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false,
+    "reveal": "always",
+    "reveal_target": "dock",
+    "hide": "on_success",
+    "shell": "system"
+  },
+  {
+    "label": "test",
+    "command": "make test",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false,
+    "reveal": "always",
+    "reveal_target": "dock",
+    "hide": "on_success",
+    "shell": "system"
+  },
+  {
+    "label": "lint",
+    "command": "make lint",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false,
+    "reveal": "always",
+    "reveal_target": "dock",
+    "hide": "on_success",
+    "shell": "system"
+  }
+]

@@ -9,71 +9,118 @@
   {
     "context": "Workspace",
     "bindings": {
-      // "shift shift": "file_finder::Toggle"
+      "ctrl-w m": "workspace::ActivatePaneLeft",
+      "ctrl-w n": "workspace::ActivatePaneDown",
+      "ctrl-w e": "workspace::ActivatePaneUp",
+      "ctrl-w i": "workspace::ActivatePaneRight",
+      "ctrl-w c": "workspace::CloseAllDocks",
+      "ctrl-w q": "pane::CloseActiveItem"
     }
   },
   {
-    "context": "Editor",
+    "context": "Editor && vim_mode == normal",
     "bindings": {
-      // "j k": ["workspace::SendKeystrokes", "escape"]
-    }
-  },
-  {
-    "context": "Dock || Terminal || Editor",
-    "bindings": {
-      "ctrl-m": "workspace::ActivatePaneLeft",
-      "ctrl-n": "workspace::ActivatePaneDown",
-      "ctrl-e": "workspace::ActivatePaneUp",
-      "ctrl-i": "workspace::ActivatePaneRight",
-      "ctrl-c": "workspace::CloseAllDocks"
-    }
-  },
-  {
-    "context": "Editor && VimControl && !VimWaiting && !menu",
-    "bindings": {
-      "space": "command_palette::Toggle",
-      "space d": "diagnostics::Deploy",
-      "space f": "file_finder::Toggle",
-      "space b b": "tab_switcher::Toggle",
+      "shift-c": "vim::SelectNext",
+      "space a": "editor::ToggleCodeActions",
+      "space b b": ["workspace::SendKeystrokes", ": ls enter"],
       "space b c": "pane::CloseActiveItem",
       "space b w": "workspace::Save",
       "space b l": "pane::AlternateFile",
-      "space p a": "agent::ToggleFocus",
+      "space c": "editor::ToggleComments",
+      "space d": "editor::GoToDiagnostic",
+      "space D": "diagnostics::Deploy",
+      "space f": "file_finder::Toggle",
+      "space h": "editor::SelectAllMatches",
+      "space j": "vim::ToggleMarksView",
+      // "space p a": "agent::ToggleFocus",
       "space p g": "git_panel::ToggleFocus",
       "space p p": "project_panel::ToggleFocus",
-      "space p o": "outline::Toggle",
+      // "space p o": "outline_panel::ToggleFocus",
+      "space r": "editor::Rename",
+      "space s": "outline::Toggle",
+      "space S": "project_symbols::Toggle",
       "space t t": "terminal_panel::ToggleFocus",
-      "space t enter": "workspace::NewCenterTerminal",
-      "space e": "workspace::ToggleLeftDock",
-      "space /": "workspace::NewSearch"
-    }
-  },
-  {
-    "context": "VimControl && !menu && vim_mode != operator",
-    "bindings": {
-      "w": "vim::NextSubwordStart",
-      "b": "vim::PreviousSubwordStart",
-      "e": "vim::NextSubwordEnd",
-      "g e": "vim::PreviousSubwordEnd",
+      "space t c": "workspace::NewCenterTerminal",
+      "space /": "workspace::NewSearch",
+      "space y": "editor::Copy",
 
+      // "g" commands
+      "g a": "tab_switcher::Toggle",
+      "g e": "editor::MoveToEnd",
+      "g g": "vim::StartOfDocument",
+      "g d": "editor::GoToDefinition",
+      "g h": "vim::StartOfLine",
+      "g l": "vim::EndOfLine",
+      "g r": "editor::FindAllReferences",
+      "g t": "go_to_line::Toggle",
+      "g y": "editor::GoToDefinition",
+      "g i": "editor::GoToImplementation",
+
+      // TODO Breakpoint and debugger
+      // TODO code folding
+      // TODO unbind g c
+      // TODO unbind g /
+      // TODO unbind g <space>
+      // TODO unbind <ctrl-w> <space>
+      // TODO unbind <ctrl-w> g d
+      // TODO unbind <ctrl-w> g D
+      "shift-u": "vim::Redo",
+
+      "g m": "editor::MoveToBeginningOfLine",
+      "g i": "editor::MoveToEndOfLine",
+      "g s": "vim::PushSneak",
+      "g S": "vim::PushSneakBackward",
       // Task menu
-      "backspace r": "task::Rerun",
       "backspace s": ["task::Spawn", { "task_name": "start" }],
       "backspace t": ["task::Spawn", { "task_name": "test" }],
       "backspace l": ["task::Spawn", { "task_name": "lint" }]
     }
   },
   {
-    "context": "VimControl && vim_mode == normal",
+    "context": "vim_operator == a || vim_operator == i || vim_operator == cs",
     "bindings": {
-      "shift-u": "vim::Redo"
+      "q": "vim::MiniQuotes",
+      "b": "vim::MiniBrackets"
+    }
+  },
+  // {
+  //   "context": "VimControl && !menu && vim_mode != operator",
+  //   "bindings": {
+  //     "w": "vim::NextSubwordStart",
+  //     "b": "vim::PreviousSubwordStart",
+  //     "e": "vim::NextSubwordEnd",
+  //     "g e": "vim::PreviousSubwordEnd"
+  //   }
+  // },
+  {
+    "context": "GitPanel",
+    "bindings": {
+      "q": "git_panel::Close"
     }
   },
   {
-    "context": "vim_mode == normal || vim_mode == visual",
+    "context": "ProjectPanel && not_editing",
     "bindings": {
-      "s": "vim::PushSneak",
-      "shift-s": "vim::PushSneakBackward"
+      "z c": "project_panel::CollapseSelectedEntry",
+      "z o": "project_panel::ExpandSelectedEntry",
+      "shift-o": "project_panel::RevealInFileManager",
+      "r": "project_panel::Rename",
+      "x": "project_panel::Cut",
+      "y": "project_panel::Copy",
+      "p": "project_panel::Paste",
+      "d": "project_panel::Trash",
+      "a": "project_panel::NewFile",
+      "shift-a": "project_panel::NewDirectory",
+      "shift-y": "workspace::CopyRelativePath",
+      "q": "workspace::ToggleLeftDock"
+    }
+  },
+  {
+    "context": "TabSwitcher",
+    "bindings": {
+      "e": "menu::SelectPrevious",
+      "n": "menu::SelectNext",
+      "x": "tab_switcher::CloseSelectedItem"
     }
   },
   {
@@ -86,7 +133,10 @@
     "context": "EmptyPane || SharedScreen",
     "bindings": {
       "space f": "file_finder::Toggle",
-      "space p": "projects::OpenRecent"
+      "space /": "workspace::NewSearch",
+      "space p": "projects::OpenRecent",
+      "space t t": "terminal_panel::ToggleFocus",
+      "space t c": "workspace::NewCenterTerminal"
     }
   }
 ]

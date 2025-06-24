@@ -39,25 +39,33 @@
   "show_whitespaces": "all",
   "cursor_blink": false,
   "base_keymap": null,
-  "indent_guides": { "enabled": true, "coloring": "indent_aware" },
+  "indent_guides": { "enabled": true },
   "inlay_hints": { "enabled": true },
 
   "theme": {
-    "dark": "Catppuccin Mocha (Blue Blur+)",
+    "dark": "Catppuccin Mocha",
     "light": "Catppuccin Latte (Blue Blur+)"
   },
   "icon_theme": "Catppuccin Mocha",
   "ui_font_size": 16,
-  "scrollbar": { "show": "never" },
-  "tabs": { "show_diagnostics": "all" },
+
   "format_on_save": "on",
-  "use_autoclose": false,
-  "autosave": "on_focus_change",
+  "use_autoclose": true,
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 10000
+    }
+  },
   "restore_on_startup": "none",
+
+  "scrollbar": { "show": "never" },
+  "minimap": { "show": "never" },
+  "tab_bar": { "show": false },
+  "bottom_dock_layout": "full",
   "collaboration_panel": { "dock": "right" },
   "notification_panel": { "dock": "right" },
-  "chat_panel": { "dock": "left" },
-  "outline_panel": { "dock": "right" },
+  "chat_panel": { "dock": "right" },
+  "outline_panel": { "dock": "left" },
   "auto_update": false,
 
   "telemetry": {
@@ -71,6 +79,17 @@
     },
     "detect_venv": { "on": { "activate_script": "fish" } }
   },
+
+  "auto_install_extensions": {
+    "catppuccin": true,
+    "catppuccin-blur-plus": true,
+    "catppuccin-icons": true,
+    "ruff": true,
+    "html": true,
+    "dockerfile": true,
+    "docker-compose": false
+  },
+
   "languages": {
     "Python": {
       "language_servers": ["pyright", "ruff"],
@@ -89,5 +108,15 @@
         }
       ]
     }
+  },
+
+  "calls": {
+    "mute_on_join": true,
+    "share_on_join": false
+  },
+
+  "journal": {
+    "path": "~/Library/Mobile Documents/com~apple~CloudDocs/Personal Journal",
+    "hour_format": "hour24"
   }
 }

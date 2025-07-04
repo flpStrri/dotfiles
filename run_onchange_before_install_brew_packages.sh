@@ -26,7 +26,7 @@ brew "docker-credential-helper"
 
 brew "mise"
 brew "helix"
-brew install sst/tap/opencode
+brew "sst/tap/opencode"
 brew "httpie"
 brew "gh"
 brew "git-delta"

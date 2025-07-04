@@ -24,5 +24,9 @@ background-opacity = 1
 
 auto-update = off
 
-keybind=clear
-
+keybind = clear
+keybind = super+c=copy_to_clipboard
+keybind = super+q=quit
+keybind = super+v=paste_from_clipboard
+keybind = super+minus=decrease_font_size:1
+keybind = super+plus=increase_font_size:1

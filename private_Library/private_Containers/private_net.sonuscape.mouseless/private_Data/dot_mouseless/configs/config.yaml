@@ -1,61 +1,293 @@
-app_version: 0.3.1
+app_version: 0.4.0-preview.2
 behavior_configs:
-- base_wheel_speed: 16
+- base_move_speed: 5.0
+  base_wheel_speed: 16.0
+  free_mode_auto_off_s: 10
+  grid_action_level: subgrid
   hide_cursor_on_click: false
   hide_location: bottom_left
-  initial_overlay_monitor: last_used
+  initial_action_location: system_cursor
+  initial_overlay_monitor: primary
   move_duration_ms: 100
   move_real_cursor_with_virtual: false
+  move_speed_multiplier: 3.0
+  movement_easing: 0.1
   multi_action_timeout_ms: 400
   name: main_behavior
+  send_escape_after_global_alt_tap__windows: true
   tap_threshold_ms: 200
-  wheel_mode_auto_off_s: 10
-  wheel_speed_multiplier: 4
-  wheel_step_size: 100
-  wheel_step_size_large: 500
+  wheel_easing: 0.1
+  wheel_speed_multiplier: 4.0
+  wheel_step_size: 100.0
+  wheel_step_size_large: 500.0
 classname: AppConfig
 custom_monitor_assignments: []
+display_input: none
+event_tap_location: hid_head
 grid_configs:
-- always_show_subgrid: false
+- always_show_subgrid: true
   grid_defn:
   - border_width: 0.0
     callback: build_cell_strings
+    keys: ARSTD HNEIO
     num_cells_x: 10
     num_cells_y: 1
   - border_width: 1.0
     callback: build_cell_strings
+    keys: ARSTD HNEIO FPZXLU,/
     num_cells_x: 1
     num_cells_y: 18
   - border_width: 0.0
     callback: apply_strings_and_subgrid_to_cells
+    keys: ''
     num_cells_x: 2
     num_cells_y: 1
-  mouse_action_keys: ARSTD HNEIO FPZXLU,/
+  hold_subgrid_key_for_nudge: true
   name: position_based_columns
+  nudges_per_cell: 4
   strategy: subgrid
   subgrid_dims:
   - 10
-  - 4
-  subgrid_mouse_action_keys: 12345 67890 QWFPB JLUY; ARSTG MNEIO ZXCDV  KH,./
+  - 3
+  subgrid_mouse_action_keys: QWFPB JLUY; ARSTG MNEIO ZXCDV  KH,./
+keyboard_layout:
+  id: com.apple.keylayout.USInternational-PC
+  name: "U.S. International \u2013 PC"
+  vk_to_char:
+    0:
+    - a
+    - A
+    1:
+    - s
+    - S
+    2:
+    - d
+    - D
+    3:
+    - f
+    - F
+    4:
+    - h
+    - H
+    5:
+    - g
+    - G
+    6:
+    - z
+    - Z
+    7:
+    - x
+    - X
+    8:
+    - c
+    - C
+    9:
+    - v
+    - V
+    10:
+    - "\xA7"
+    - "\xB1"
+    11:
+    - b
+    - B
+    12:
+    - q
+    - Q
+    13:
+    - w
+    - W
+    14:
+    - e
+    - E
+    15:
+    - r
+    - R
+    16:
+    - y
+    - Y
+    17:
+    - t
+    - T
+    18:
+    - '1'
+    - '!'
+    19:
+    - '2'
+    - '@'
+    20:
+    - '3'
+    - '#'
+    21:
+    - '4'
+    - $
+    22:
+    - '6'
+    - "\u02C6"
+    23:
+    - '5'
+    - '%'
+    24:
+    - '='
+    - +
+    25:
+    - '9'
+    - (
+    26:
+    - '7'
+    - '&'
+    27:
+    - '-'
+    - _
+    28:
+    - '8'
+    - '*'
+    29:
+    - '0'
+    - )
+    30:
+    - ']'
+    - '}'
+    31:
+    - o
+    - O
+    32:
+    - u
+    - U
+    33:
+    - '['
+    - '{'
+    34:
+    - i
+    - I
+    35:
+    - p
+    - P
+    36: "\r"
+    37:
+    - l
+    - L
+    38:
+    - j
+    - J
+    39:
+    - ''''
+    - '"'
+    40:
+    - k
+    - K
+    41:
+    - ;
+    - ':'
+    42:
+    - \
+    - '|'
+    43:
+    - ','
+    - <
+    44:
+    - /
+    - '?'
+    45:
+    - n
+    - N
+    46:
+    - m
+    - M
+    47:
+    - .
+    - '>'
+    48: "\t"
+    49: ' '
+    50:
+    - '`'
+    - "\u02DC"
+    51: "\b"
+    52: "\x03"
+    53: "\e"
+    64: "\x10"
+    65: .
+    66:
+    - "\x1D"
+    - '*'
+    67: '*'
+    69: +
+    70:
+    - "\x1C"
+    - +
+    71: "\e"
+    72:
+    - "\x1F"
+    - '='
+    75: /
+    76: "\x03"
+    77:
+    - "\x1E"
+    - /
+    78: '-'
+    79: "\x10"
+    80: "\x10"
+    81: '='
+    82: '0'
+    83: '1'
+    84: '2'
+    85: '3'
+    86: '4'
+    87: '5'
+    88: '6'
+    89: '7'
+    91: '8'
+    92: '9'
+    96: "\x10"
+    97: "\x10"
+    98: "\x10"
+    99: "\x10"
+    100: "\x10"
+    101: "\x10"
+    102: "\x10"
+    103: "\x10"
+    104: "\x10"
+    105: "\x10"
+    106: "\x10"
+    107: "\x10"
+    108: "\x10"
+    109: "\x10"
+    110: "\x10"
+    111: "\x10"
+    112: "\x10"
+    113: "\x10"
+    114: "\x05"
+    115: "\x01"
+    116: "\v"
+    117: "\x7F"
+    118: "\x10"
+    119: "\x04"
+    120: "\x10"
+    121: "\f"
+    122: "\x10"
+    123: "\x1C"
+    124: "\x1D"
+    125: "\x1F"
+    126: "\x1E"
 keymaps:
 - entries:
+    back mouse button: null
     back mouse button (w/o overlay): null
     close UI element: null
     cycle click count: null
+    cycle font: null
+    cycle font reverse: null
+    cycle grid action level: null
     cycle mouse action type: null
     cycle mouse button: null
-    decrease overlay opacity: ArrowDown
+    decrease overlay opacity: null
     edit config: null
-    enter wheel mode: null
+    enter free mode: null
     execute mouse action: Space
     execute mouse move: Shift+Space
-    exit wheel mode:
-    - Escape
-    - Backspace
+    exit free mode: Escape
+    forward mouse button: null
     forward mouse button (w/o overlay): null
-    hide overlay:
-    - Escape
-    - Backspace
+    hide overlay: Escape
     hold for back button: null
     hold for drag: Control
     hold for forward button: null
@@ -63,25 +295,37 @@ keymaps:
     hold for move: Option
     hold for right button: Command
     hold for speed decrease: null
-    hold for speed increase: Shift
-    increase overlay opacity: ArrowUp
+    hold for speed increase: null
+    increase overlay opacity: null
     jump to bottom: null
     jump to left edge: null
     jump to right edge: null
     jump to top: null
+    left mouse button: null
     left mouse button (w/o overlay): null
+    middle mouse button: null
     middle mouse button (w/o overlay): null
-    release hold/drag:
-    - Escape
-    - Backspace
+    move down: null
+    move left: null
+    move right: null
+    move up: null
+    release hold/drag: Escape
     repeat last mouse action: null
+    right mouse button: null
     right mouse button (w/o overlay): null
-    show overlay: Shift+Control+Command+Option+F11
+    show overlay: Shift tap
+    subgrid nudge down: ArrowDown
+    subgrid nudge left: ArrowLeft
+    subgrid nudge right: ArrowRight
+    subgrid nudge up: ArrowUp
     switch monitor left: null
     switch monitor right: null
+    toggle continuous mode: Control tap
+    toggle continuous mode until closed: null
+    toggle free mode: null
     toggle overlay: null
-    toggle wheel mode: Shift+Control+Command+Option+F12
-    undo last key: null
+    toggle overlay lock: null
+    undo last key: Backspace
     wheel down: N
     wheel down fast: null
     wheel left: M
@@ -99,7 +343,7 @@ keymaps:
     wheel up: E
     wheel up fast: null
   name: mac
-monitor_assignment_mode: auto
+monitor_assignment_mode: single
 name: ''
 style_configs:
 - always_on_subgrid_rgba:
@@ -112,7 +356,7 @@ style_configs:
   - 0.0
   - 0.0
   - 0.35
-  char_spacing_cell_width_ratio: 0.5
+  char_spacing_cell_width_ratio: 0.4
   char_spacing_font_size_ratio: 0.5
   char_spacing_strategy: cell_width_relative
   cursor_drag_rgba:
@@ -141,13 +385,16 @@ style_configs:
   - 0.32
   - 0.7
   cursor_size: 7
-  font_size_multiplier: 0.4
+  font_family: Baskerville
+  font_size_multiplier: 0.5
+  font_weight: 600
   grid_line_style: lines
   grid_rgba:
   - 1.0
   - 1.0
   - 1.0
-  - 0.4
+  - 0.25
+  highlight_animation_ms: 0
   highlight_rgba:
   - 0.77
   - 0.44
@@ -160,24 +407,25 @@ style_configs:
   - 1.0
   - 1.0
   - 1.0
-  - 0.5
+  - 0.25
   subgrid_text_rgba:
   - 1.0
   - 1.0
   - 1.0
-  - 0.5
+  - 0.6
   text_rgba:
   - 1.0
   - 1.0
   - 1.0
   - 1.0
-  text_shadow_blur_radius: 4.0
+  text_shadow_blur_radius: 5.0
   text_shadow_offset:
   - 0.0
-  - 0.0
+  - 1.0
   text_shadow_rgba:
   - 0.0
   - 0.0
   - 0.0
-  - 1.0
+  - 0.4
+  text_y_offset: 0.0
   window_opacity: 1.0

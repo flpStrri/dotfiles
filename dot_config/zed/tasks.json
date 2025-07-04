@@ -11,7 +11,7 @@
   },
   {
     "label": "test",
-    "command": "make test",
+    "command": "mise run test",
     "use_new_terminal": false,
     "allow_concurrent_runs": false,
     "reveal": "always",

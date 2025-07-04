@@ -14,7 +14,7 @@
     "edit_prediction_provider": "zed"
   },
   "agent": {
-    "default_profile": "write",
+    "default_profile": "ask",
     "default_model": {
       "provider": "copilot_chat",
       "model": "claude-sonnet-4"
@@ -22,6 +22,7 @@
     "version": "2"
   },
   "edit_predictions": {
+    "mode": "subtle",
     "disabled_globs": [".env"]
   },
 

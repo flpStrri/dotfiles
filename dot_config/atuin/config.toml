@@ -9,3 +9,6 @@ enter_accept = true
 common_subcommands = ["cargo", "git", "npm", "hatch", "kubectl", "helm"]
 # Set commands that should be totally stripped and ignored from stats.
 common_prefix = ["sudo"]
+history_filter = [
+  "^exit"
+]

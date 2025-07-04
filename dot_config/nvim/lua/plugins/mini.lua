@@ -9,7 +9,30 @@ now(function()
 	require("mini.starter").setup({ header = "Hei! Tervetuloa Neovimiin!" })
 end)
 now(function()
-	require("mini.statusline").setup({ use_icons = false })
+	local sl = require("mini.statusline")
+	sl.setup({
+		use_icons = false,
+		content = {
+			active = function()
+				local mode, mode_hl = sl.section_mode({ trunc_width = 999999 })
+				local git = sl.section_git({ trunc_width = 40 })
+				local diff = sl.section_diff({ trunc_width = 75 })
+				local diagnostics = sl.section_diagnostics({ trunc_width = 75 })
+				local filename = sl.section_filename({ trunc_width = 140 })
+				local location = sl.section_location({ trunc_width = 75 })
+				local search = sl.section_searchcount({ trunc_width = 999999 })
+
+				return sl.combine_groups({
+					{ hl = mode_hl, strings = { mode } },
+					{ hl = "MiniStatuslineDevinfo", strings = { git, diff, diagnostics } },
+					"%<", -- Mark general truncate point
+					{ hl = "MiniStatuslineFilename", strings = { filename } },
+					"%=", -- End left alignment
+					{ hl = mode_hl, strings = { search, location } },
+				})
+			end,
+		},
+	})
 end)
 later(function()
 	require("mini.ai").setup()

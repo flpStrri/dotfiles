@@ -9,6 +9,11 @@ cursorline = true
 completion-replace = true
 rulers = [80]
 auto-pairs = false
+scrolloff = 2
+jump-label-alphabet = "tnseriaodhc,x.z/plfuwy"
+
+[editor.lsp]
+display-signature-help-docs	= false
 
 [editor.auto-save.after-delay]
 enable = true
@@ -29,12 +34,14 @@ render = true
 enable = true
 
 [keys.normal.backspace]
-b = ":run-shell-command zellij run -f -- mise run build"
-s = ":run-shell-command zellij run -f -- mise run start"
-l = ":run-shell-command zellij run -f -- mise run lint"
-L = ":run-shell-command zellij run -f -- mise run lint-fix"
-t = ":run-shell-command zellij run -f -- mise run test"
-T = ":run-shell-command zellij run -f -- mise run test-watch"
+a = ":run-shell-command zellij run --floating -x 10% -y 10% --width 80% --height 80% -- opencode"
+b = ":run-shell-command zellij run --floating -x 10% -y 10% --width 80% --height 80% -- mise run build"
+s = ":run-shell-command zellij run --floating -x 10% -y 10% --width 80% --height 80% -- mise run start"
+r = ":reload-all"
+l = ":run-shell-command zellij run --floating -x 10% -y 10% --width 80% --height 80% -- mise run lint"
+L = ":run-shell-command zellij run --floating -x 10% -y 10% --width 80% --height 80% -- mise run lint-fix"
+t = ":run-shell-command zellij run --floating -x 10% -y 10% --width 80% --height 80% -- mise run test"
+T = ":run-shell-command zellij run --floating --direction down --size 20% -- mise run test-watch"
 
 [keys.normal.space.t]
 f = ":format"
@@ -43,67 +50,11 @@ c = ":buffer-close"
 n = ":buffer-next"
 p = ":buffer-previous"
 
-# Move keys remap for the Voyager Colemak-DHm layout
 [keys.normal]
-h="move_char_left"
-n="move_line_down"
-e="move_line_up"
-i="move_char_right"
-
 "pageup" = ["page_cursor_half_up", "align_view_center"]
 "pagedown" = ["page_cursor_half_down", "align_view_center"]
-"N" = ["page_cursor_half_down", "align_view_center"]
-"E" = ["page_cursor_half_up", "align_view_center"]
-
-l="insert_mode"
-L="insert_at_line_start"
-
-j="search_next"
-J="search_prev"
-
-k="move_next_word_end"
-K="move_next_long_word_end"
-
-[keys.normal.g]
-h="goto_line_start"
-i="goto_line_end"
-n="move_line_down"
-e="move_line_up"
-
-[keys.normal.space.w]
-h="jump_view_left"
-n="jump_view_down"
-e="jump_view_up"
-i="jump_view_right"
-
-[keys.normal.C-w]
-h="jump_view_left"
-n="jump_view_down"
-e="jump_view_up"
-i="jump_view_right"
-
-[keys.select]
-h="move_char_left"
-n="move_line_down"
-e="move_line_up"
-i="move_char_right"
-
-l="insert_mode"
-L="insert_at_line_start"
-
-j="search_next"
-J="search_prev"
-
-k="move_next_word_end"
-K="move_next_long_word_end"
-
-[keys.normal.z]
-n="scroll_down"
-e="scroll_up"
-
-[keys.normal.Z]
-n="scroll_down"
-e="scroll_up"
+"C-up" = ["page_cursor_half_up", "align_view_center"]
+"C-down" = ["page_cursor_half_down", "align_view_center"]
 
 [keys.insert]
-C-p="signature_help"
+C-h="signature_help"

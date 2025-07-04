@@ -13,6 +13,10 @@ brew "zellij"
 brew "fzf"
 brew "less"
 brew "git-delta"
+brew "jq"
+brew "zoxide"
+brew "atuin"
+brew "chezmoi"
 
 brew "colima"
 brew "docker"
@@ -22,16 +26,23 @@ brew "docker-credential-helper"
 
 brew "mise"
 brew "helix"
+brew install sst/tap/opencode
 brew "httpie"
 brew "gh"
-brew "jq"
+brew "git-delta"
+brew "jj"
+brew "uv"
 
 cask "1password", args: { force: true }
 cask "firefox", args: { force: true }
+
 cask "font-jetbrains-mono-nerd-font", args: { force: true }
 cask "font-jetbrains-mono", args: { force: true }
-cask "fork", args: { force: true }
+
 cask "ghostty", args: { force: true }
 cask "raycast", args: { force: true }
+cask "mouseless@preview", args: { force: true }
+cask "fork", args: { force: true }
+
 cask "slack", args: { force: true }
 EOF

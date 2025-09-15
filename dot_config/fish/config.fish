@@ -2,6 +2,7 @@
 set -gx EDITOR hx
 set -gx VISUAL $EDITOR
 set -gx PAGER less
+set -gx LESS '-R --quit-if-one-screen'
 set -gx MANPAGER $PAGER
 set -gx LANG en_US.UTF-8
 set -gx LC_ALL en_US.UTF-8

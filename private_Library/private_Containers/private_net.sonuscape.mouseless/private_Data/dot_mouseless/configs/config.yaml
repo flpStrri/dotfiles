@@ -1,4 +1,4 @@
-app_version: 0.4.0-preview.2
+app_version: 0.4.0-preview.6
 behavior_configs:
 - base_move_speed: 5.0
   base_wheel_speed: 16.0
@@ -22,6 +22,7 @@ behavior_configs:
   wheel_step_size_large: 500.0
 classname: AppConfig
 custom_monitor_assignments: []
+debug_options: {}
 display_input: none
 event_tap_location: hid_head
 grid_configs:
@@ -42,9 +43,9 @@ grid_configs:
     keys: ''
     num_cells_x: 2
     num_cells_y: 1
-  hold_subgrid_key_for_nudge: true
+  hold_subgrid_key_for_nudge: false
   name: position_based_columns
-  nudges_per_cell: 4
+  nudges_per_cell: 8
   strategy: subgrid
   subgrid_dims:
   - 10
@@ -289,11 +290,11 @@ keymaps:
     forward mouse button (w/o overlay): null
     hide overlay: Escape
     hold for back button: null
-    hold for drag: Control
+    hold for drag: Shift
     hold for forward button: null
-    hold for middle button: null
+    hold for middle button: Command
     hold for move: Option
-    hold for right button: Command
+    hold for right button: Control
     hold for speed decrease: null
     hold for speed increase: null
     increase overlay opacity: null
@@ -314,10 +315,18 @@ keymaps:
     right mouse button: null
     right mouse button (w/o overlay): null
     show overlay: Shift tap
-    subgrid nudge down: ArrowDown
-    subgrid nudge left: ArrowLeft
-    subgrid nudge right: ArrowRight
-    subgrid nudge up: ArrowUp
+    subgrid nudge down:
+    - '4'
+    - '7'
+    subgrid nudge left:
+    - '5'
+    - '6'
+    subgrid nudge right:
+    - '2'
+    - '9'
+    subgrid nudge up:
+    - '3'
+    - '8'
     switch monitor left: null
     switch monitor right: null
     toggle continuous mode: Control tap

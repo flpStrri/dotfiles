@@ -4,8 +4,8 @@ cursor-invert-fg-bg = true
 cursor-style = block
 cursor-style-blink = false
 
-window-padding-x = 8
-window-padding-y = 8
+window-padding-x = 4
+window-padding-y = 4
 window-padding-balance = true
 window-save-state = always
 confirm-close-surface = true
@@ -21,8 +21,8 @@ macos-titlebar-style = hidden
 
 macos-icon = xray
 background-opacity = 1
-
 auto-update = off
+mouse-hide-while-typing = true
 
 keybind = clear
 keybind = super+c=copy_to_clipboard

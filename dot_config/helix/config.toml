@@ -34,21 +34,22 @@ render = true
 enable = true
 
 [keys.normal.backspace]
-a = ":run-shell-command zellij run --floating -x 10% -y 10% --width 80% --height 80% -- opencode"
-b = ":run-shell-command zellij run --floating -x 10% -y 10% --width 80% --height 80% -- mise run build"
-s = ":run-shell-command zellij run --floating -x 10% -y 10% --width 80% --height 80% -- mise run start"
-r = ":reload-all"
-l = ":run-shell-command zellij run --floating -x 10% -y 10% --width 80% --height 80% -- mise run lint"
-L = ":run-shell-command zellij run --floating -x 10% -y 10% --width 80% --height 80% -- mise run lint-fix"
-t = ":run-shell-command zellij run --floating -x 10% -y 10% --width 80% --height 80% -- mise run test"
-T = ":run-shell-command zellij run --floating --direction down --size 20% -- mise run test-watch"
+a = ":run-shell-command zellij run --floating -x 10%% -y 10%% --width 80%% --height 80%% -- opencode"
+b = ":run-shell-command zellij run --floating -x 10%% -y 10%% --width 80%% --height 80%% -- mise run build"
+s = ":run-shell-command zellij run --floating -x 10%% -y 10%% --width 80%% --height 80%% -- mise run start"
+l = ":run-shell-command zellij run --floating -x 10%% -y 10%% --width 80%% --height 80%% -- mise run lint"
+f = ":run-shell-command zellij run --floating -x 10%% -y 10%% --width 80%% --height 80%% -- mise run fmt"
+t = ":run-shell-command zellij run --floating -x 10%% -y 10%% --width 80%% --height 80%% -- mise run test"
+T = ":run-shell-command zellij run --floating --direction down --size 20%% -- mise run test-watch"
 
-[keys.normal.space.t]
-f = ":format"
-w = ":write"
+[keys.normal.space.b]
+b = "buffer_picker"
 c = ":buffer-close"
+f = ":format"
 n = ":buffer-next"
 p = ":buffer-previous"
+r = ":reload-all"
+w = ":write"
 
 [keys.normal]
 "pageup" = ["page_cursor_half_up", "align_view_center"]

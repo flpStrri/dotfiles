@@ -46,17 +46,17 @@ keybinds clear-defaults=true {
         bind "Ctrl c" { SwitchToMode "Normal"; }
         bind "Esc" { UndoRenamePane; SwitchToMode "Pane"; }
     }
-    // resize {
-    //     bind "Ctrl n" { SwitchToMode "normal"; }
-    //     bind "h" { Resize "Increase left"; }
-    //     bind "n" { Resize "Increase down"; }
-    //     bind "e" { Resize "Increase up"; }
-    //     bind "i" { Resize "Increase right"; }
-    //     bind "H" { Resize "Decrease left"; }
-    //     bind "N" { Resize "Decrease down"; }
-    //     bind "E" { Resize "Decrease up"; }
-    //     bind "I" { Resize "Decrease right"; }
-    // }
+    resize {
+        bind "Ctrl n" { SwitchToMode "normal"; }
+        bind "m" { Resize "Increase left"; }
+        bind "n" { Resize "Increase down"; }
+        bind "e" { Resize "Increase up"; }
+        bind "i" { Resize "Increase right"; }
+        bind "H" { Resize "Decrease left"; }
+        bind "N" { Resize "Decrease down"; }
+        bind "E" { Resize "Decrease up"; }
+        bind "I" { Resize "Decrease right"; }
+    }
     move {
         bind "Ctrl m" { SwitchToMode "normal"; }
         bind "tab" { MovePane; }
@@ -135,9 +135,9 @@ keybinds clear-defaults=true {
     shared_except "locked" "pane" {
         bind "Ctrl p" { SwitchToMode "pane"; }
     }
-    // shared_except "locked" "resize" {
-    //     bind "Ctrl r" { SwitchToMode "resize"; }
-    // }
+    shared_except "locked" "resize" {
+        bind "Ctrl r" { SwitchToMode "resize"; }
+    }
     shared_except "locked" "move" {
         bind "Ctrl m" { SwitchToMode "move"; }
     }

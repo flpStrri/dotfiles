@@ -1,21 +1,43 @@
-use-grammars = { only = [ "go", "rust", "python", "typescript", "yaml", "dockerfile", "markdown", "git-rebase", "git-commit" ] }
+use-grammars = { only = [ "go", "rust", "python", "typescript", "yaml", "json", "dockerfile", "markdown", "git-rebase", "git-commit" ] }
 
 [language-server.gopls]
 command = "gopls"
-config = { "gofumpt" = true, "local" = "goimports", "semanticTokens" = true, "staticcheck" = true, "verboseOutput" = true, "analyses" = { "fieldalignment" = true, "nilness" = true, unusedparams = true, unusedwrite = true, useany = true }, usePlaceholders = true, completeUnimported = true, hints = { "assignVariableType" = true, "compositeLiteralFields" = true, "compositeLiteralTypes" = true, "constantValues" = true, "functionTypeParameters" = true, "parameterNames" = true, "rangeVariableTypes" = true } }
+[language-server.gopls.config]
+semanticTokens = true
+staticcheck = true
+usePlaceholders = true
+completeUnimported = true
+[language-server.gopls.config.analyses]
+nilness = true
+useany = true
+[language-server.gopls.config.hints]
+assignVariableType = true
+compositeLiteralFields = true
+compositeLiteralTypes = true
+constantValues = true
+functionTypeParameters = true
+parameterNames = true
+rangeVariableTypes = true
+[language-server.golangci-lint-lsp]
+command = "golangci-lint-langserver"
+[language-server.golangci-lint-lsp.config]
+command = ["golangci-lint", "run", "--out-format", "json", "--issues-exit-code=1"]
+[[language]]
+name = "go"
+roots = ["go.mod"]
+auto-format = true
+comment-token = "//"
+language-servers = [ "gopls", "golangci-lint-lsp"]
+formatter = { command = "goimports", args = [] }
 
+# [language-server.ty]
+# command = "ty"
+# args = ["server"]
 [[language]]
 name = "python"
 auto-format = true
-formatter = { command = "black" , args = ["-", "--quiet"] }
-
-[[language]]
-name = "go"
-roots = ["go.work", "go.mod"]
-auto-format = true
-formatter = { command = "gofmt" }
-comment-token = "//"
-language-servers = [ "gopls"]
+# language-servers = [ "ty" ]
+# formatter = { command = "ruff" , args = ["-", "--quiet"] }
 
 [[language]]
 name = "rust"
@@ -23,31 +45,37 @@ roots = ["Cargo.toml", "Cargo.lock"]
 auto-format = true
 language-servers = ["rust-analyzer"]
 indent = { tab-width = 4, unit = "    " }
-
 [language.debugger]
 name = "rust-lldb"
 transport = "stdio"
 command = "rust-lldb"
-
 [[language.debugger.templates]]
 name = "binary"
 request = "launch"
-
 [[language.debugger.templates.completion]]
 completion = "filename"
 name = "binary"
-
 [language.debugger.templates.args]
 program = "{0}"
 runInTerminal = false
-
 [language-server.rust-analyzer.config]
 check.command = "clippy"
 
 [[language]]
-name = "typescript"
-auto-format = true
-
-[[language]]
 name = "markdown"
 auto-format = true
+
+
+[language-server]
+biome = { command = "biome", args = ["lsp-proxy"] }
+[[language]]
+name = "typescript"
+language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome" ]
+auto-format = true
+[[language]]
+name = "javascript"
+language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome" ]
+auto-format = true
+[[language]]
+name = "json"
+language-servers = [ { name = "vscode-json-language-server", except-features = [ "format" ] }, "biome" ]

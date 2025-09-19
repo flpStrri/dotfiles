@@ -19,10 +19,6 @@ set -U fish_greeting
 
 if status is-interactive
     atuin init fish | source
-    if [ "$TERM" = xterm-ghostty ]
-        export ZELLIJ_CONFIG_DIR=$HOME/.config/zellij
-        eval (zellij setup --generate-auto-start fish | string collect)
-    end
 end
 
 zoxide init fish | source

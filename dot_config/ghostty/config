@@ -1,11 +1,11 @@
 font-size = 14
-theme = catppuccin-mocha
+theme = Catppuccin Mocha
 cursor-invert-fg-bg = true
 cursor-style = block
 cursor-style-blink = false
 
-window-padding-x = 4
-window-padding-y = 4
+window-padding-x = 8
+window-padding-y = 8
 window-padding-balance = true
 window-save-state = always
 confirm-close-surface = true
@@ -13,20 +13,28 @@ quit-after-last-window-closed = true
 
 shell-integration-features = no-cursor,no-sudo,title
 
+macos-titlebar-style = tabs
 macos-option-as-alt = true
 macos-window-shadow = true
-macos-titlebar-proxy-icon = hidden
-window-decoration = false
-macos-titlebar-style = hidden
 
-macos-icon = xray
-background-opacity = 1
+background-opacity = 0.94
+background-blur = true
+unfocused-split-opacity = 0.4
 auto-update = off
 mouse-hide-while-typing = true
 
-keybind = clear
+# keybind = clear
 keybind = super+c=copy_to_clipboard
 keybind = super+q=quit
 keybind = super+v=paste_from_clipboard
 keybind = super+minus=decrease_font_size:1
 keybind = super+plus=increase_font_size:1
+
+
+keybind = ctrl+w>f=toggle_split_zoom
+keybind = ctrl+w>m=goto_split:left
+keybind = ctrl+w>n=goto_split:down
+keybind = ctrl+w>e=goto_split:up
+keybind = ctrl+w>i=goto_split:right
+keybind = ctrl+w>r=new_split:right
+keybind = ctrl+w>d=new_split:down

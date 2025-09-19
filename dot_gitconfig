@@ -3,6 +3,7 @@
 
 [user]
   name = João Filipe Storarri
+  email = 13003392+flpStrri@users.noreply.github.com
   signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAF1y7C6sHFmsrJpfnfbOV7D3ULR2uiN2LX+KWo4P73h
 
 [alias]
@@ -12,7 +13,7 @@
   b         = branch
   br        = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
   cb        = "!f() { git switch --progress --no-track -c "$1" "origin/$(git default)"; }; f"
-  cbf        = "!f() { git switch --progress --no-track -c "$1" "$2"; }; f"
+  cbf       = "!f() { git switch --progress --no-track -c "$1" "$2"; }; f"
   fcb       = !git fetch && git cb
   fap       = fetch --all --prune
   purr      = pull --rebase
@@ -29,8 +30,8 @@
   aa        = add .
   c         = commit -m
   ca        = commit --amend
-  amend     = commit --amend
   cano      = commit --amend --no-edit
+  
   # Tools
   default   = !git remote show origin | awk '/HEAD branch/ {print $NF}'
   cbranch   = !git symbolic-ref --quiet HEAD | awk 'gsub(/refs\\/heads\\//, \"\")'
@@ -70,9 +71,3 @@
 
 [commit]
   gpgsign = true
-
-[includeIf "gitdir/i:~/GitHub/"]
-  path = ~/.gitconfig-github
-
-[includeIf "gitdir/i:~/Azure/"]
-  path = ~/.gitconfig-azure

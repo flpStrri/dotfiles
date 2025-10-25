@@ -1,4 +1,4 @@
-app_version: 0.4.0-preview.6
+app_version: 0.4.2
 behavior_configs:
 - base_move_speed: 5.0
   base_wheel_speed: 16.0
@@ -50,7 +50,7 @@ grid_configs:
   subgrid_dims:
   - 10
   - 3
-  subgrid_mouse_action_keys: QWFPB JLUY; ARSTG MNEIO ZXCDV  KH,./
+  subgrid_mouse_action_keys: QWFPB JLUY' ARSTG MNEIO ZXCDV  KH,./
 keyboard_layout:
   id: com.apple.keylayout.USInternational-PC
   name: "U.S. International \u2013 PC"
@@ -271,6 +271,7 @@ keyboard_layout:
     126: "\x1E"
 keymaps:
 - entries:
+    back click: null
     back mouse button: null
     back mouse button (w/o overlay): null
     close UI element: null
@@ -286,6 +287,7 @@ keymaps:
     execute mouse action: Space
     execute mouse move: Shift+Space
     exit free mode: Escape
+    forward click: null
     forward mouse button: null
     forward mouse button (w/o overlay): null
     hide overlay: Escape
@@ -304,6 +306,7 @@ keymaps:
     jump to top: null
     left mouse button: null
     left mouse button (w/o overlay): null
+    middle click: null
     middle mouse button: null
     middle mouse button (w/o overlay): null
     move down: null
@@ -312,9 +315,10 @@ keymaps:
     move up: null
     release hold/drag: Escape
     repeat last mouse action: null
+    right click: null
     right mouse button: null
     right mouse button (w/o overlay): null
-    show overlay: Shift tap
+    show overlay: Shift double tap
     subgrid nudge down:
     - '4'
     - '7'
@@ -329,6 +333,7 @@ keymaps:
     - '8'
     switch monitor left: null
     switch monitor right: null
+    toggle app enabled: null
     toggle continuous mode: Control tap
     toggle continuous mode until closed: null
     toggle free mode: null

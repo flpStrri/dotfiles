@@ -1,4 +1,4 @@
-use-grammars = { only = [ "go", "rust", "python", "typescript", "yaml", "json", "dockerfile", "markdown", "git-rebase", "git-commit" ] }
+use-grammars = { only = [ "go", "odin", "rust", "python", "typescript", "yaml", "json", "dockerfile", "markdown", "git-rebase", "git-commit" ] }
 
 [language-server.gopls]
 command = "gopls"

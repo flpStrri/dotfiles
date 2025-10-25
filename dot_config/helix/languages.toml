@@ -1,5 +1,8 @@
 use-grammars = { only = [ "go", "odin", "rust", "python", "typescript", "yaml", "json", "dockerfile", "markdown", "git-rebase", "git-commit" ] }
 
+[language-server.ols]
+command = "ols-arm64-darwin"
+
 [language-server.gopls]
 command = "gopls"
 [language-server.gopls.config]

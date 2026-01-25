@@ -9,7 +9,6 @@ fi
 brew bundle --upgrade --file=/dev/stdin <<EOF
 
 brew "fish"
-brew "fzf"
 brew "less"
 brew "jq"
 brew "zoxide"

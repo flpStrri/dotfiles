@@ -1,8 +1,5 @@
 use-grammars = { only = [ "go", "odin", "rust", "python", "typescript", "yaml", "json", "dockerfile", "markdown", "git-rebase", "git-commit" ] }
 
-[language-server.ols]
-command = "ols-arm64-darwin"
-
 [language-server.gopls]
 command = "gopls"
 [language-server.gopls.config]
@@ -33,14 +30,20 @@ comment-token = "//"
 language-servers = [ "gopls", "golangci-lint-lsp"]
 formatter = { command = "goimports", args = [] }
 
-# [language-server.ty]
-# command = "ty"
-# args = ["server"]
+[language-server.ty]
+command = "ty"
+args = ["server"]
 [[language]]
 name = "python"
 auto-format = true
-# language-servers = [ "ty" ]
-# formatter = { command = "ruff" , args = ["-", "--quiet"] }
+language-servers = [ "ty" ]
+formatter = { command = "ruff" , args = ["-", "--quiet"] }
+
+
+[language-server.ols]
+command = "ols-arm64-darwin"
+[language-server.odinfmt]
+command = "odinfmt-arm64-darwin"
 
 [[language]]
 name = "rust"
@@ -68,17 +71,3 @@ check.command = "clippy"
 name = "markdown"
 auto-format = true
 
-
-[language-server]
-biome = { command = "biome", args = ["lsp-proxy"] }
-[[language]]
-name = "typescript"
-language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome" ]
-auto-format = true
-[[language]]
-name = "javascript"
-language-servers = [ { name = "typescript-language-server", except-features = [ "format" ] }, "biome" ]
-auto-format = true
-[[language]]
-name = "json"
-language-servers = [ { name = "vscode-json-language-server", except-features = [ "format" ] }, "biome" ]

@@ -1,11 +1,9 @@
 theme = "catppuccin_custom"
 
 [editor]
-# shell = ["zsh", "-c"]
 line-number = "relative"
 mouse = true
 cursorline = true
-# color-modes = true
 completion-replace = true
 rulers = [80]
 auto-pairs = false
@@ -56,6 +54,8 @@ w = ":write"
 "pagedown" = ["page_cursor_half_down", "align_view_center"]
 "C-up" = ["page_cursor_half_up", "align_view_center"]
 "C-down" = ["page_cursor_half_down", "align_view_center"]
+"C-u" = ["page_cursor_half_up", "align_view_center"]
+"C-d" = ["page_cursor_half_down", "align_view_center"]
 
 [keys.insert]
 C-h="signature_help"

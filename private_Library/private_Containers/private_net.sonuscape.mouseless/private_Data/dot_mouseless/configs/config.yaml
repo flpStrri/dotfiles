@@ -1,4 +1,4 @@
-app_version: 0.4.2
+app_version: 0.5.0-preview.1
 behavior_configs:
 - base_move_speed: 5.0
   base_wheel_speed: 16.0
@@ -30,12 +30,12 @@ grid_configs:
   grid_defn:
   - border_width: 0.0
     callback: build_cell_strings
-    keys: ARSTD HNEIO
+    keys: ARSTG MNEIO
     num_cells_x: 10
     num_cells_y: 1
   - border_width: 1.0
     callback: build_cell_strings
-    keys: ARSTD HNEIO FPZXLU,/
+    keys: ARSTG MNEIO FPZXLU./
     num_cells_x: 1
     num_cells_y: 18
   - border_width: 0.0
@@ -50,7 +50,7 @@ grid_configs:
   subgrid_dims:
   - 10
   - 3
-  subgrid_mouse_action_keys: QWFPB JLUY' ARSTG MNEIO ZXCDV  KH,./
+  subgrid_mouse_action_keys: QWFPB JLUY; ARSTG MNEIO ZXCDV  KH,./
 keyboard_layout:
   id: com.apple.keylayout.USInternational-PC
   name: "U.S. International \u2013 PC"
@@ -365,14 +365,29 @@ style_configs:
   - 1.0
   - 1.0
   - 0.1
-  background_rgba:
-  - 0.0
-  - 0.0
-  - 0.0
-  - 0.35
+  background_colors:
+  - - 0.0
+    - 0.0
+    - 0.0
+    - 0.35
+  bg_color_block_size: 1
+  bg_color_transforms_level_1:
+  - - hsla_add
+    - 0.0
+    - 0.0
+    - 0.0
+    - 0.0
+  bg_color_transforms_level_2:
+  - - hsla_add
+    - 0.0
+    - 0.0
+    - 0.0
+    - 0.0
+  char_display: all
   char_spacing_cell_width_ratio: 0.4
   char_spacing_font_size_ratio: 0.5
   char_spacing_strategy: cell_width_relative
+  colorParamInput: none
   cursor_drag_rgba:
   - 0.0
   - 0.5
@@ -442,4 +457,5 @@ style_configs:
   - 0.0
   - 0.4
   text_y_offset: 0.0
+  use_bg_color_transforms: false
   window_opacity: 1.0

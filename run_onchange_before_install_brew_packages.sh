@@ -28,7 +28,6 @@ brew "sst/tap/opencode"
 brew "xh"
 brew "gh"
 brew "git-delta"
-brew "jj"
 
 cask "1password", args: { force: true }
 

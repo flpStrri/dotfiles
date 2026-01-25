@@ -3,11 +3,23 @@ timezone = "local"
 auto_sync = false
 update_check = false
 enter_accept = true
+style = "auto"
+ctrl_n_shortcuts = true
+
+[dotfiles]
+enabled = false
+
+[sync]
+records = false
+
+[daemon]
+enabled = false
+
+[theme]
+name = "catppuccin-mocha"
 
 [stats]
-# Set commands where we should consider the subcommand for statistics.
-common_subcommands = ["cargo", "git", "npm", "hatch", "kubectl", "helm"]
-# Set commands that should be totally stripped and ignored from stats.
+common_subcommands = ["g", "git", "uv", "go", "odin", "kubectl"]
 common_prefix = ["sudo"]
 history_filter = [
   "^exit"

@@ -32,7 +32,8 @@ render = true
 enable = true
 
 [keys.normal.backspace]
-a = ":run-shell-command zellij run --floating -x 10%% -y 10%% --width 80%% --height 80%% -- opencode"
+a = ":run-shell-command zellij run --floating -x 10%% -y 10%% --width 80%% --height 80%% -- agent"
+p = ":run-shell-command zellij run --direction Right -- agent --plan"
 b = ":run-shell-command zellij run --floating -x 10%% -y 10%% --width 80%% --height 80%% -- mise run build"
 s = ":run-shell-command zellij run --floating -x 10%% -y 10%% --width 80%% --height 80%% -- mise run start"
 l = ":run-shell-command zellij run --floating -x 10%% -y 10%% --width 80%% --height 80%% -- mise run lint"

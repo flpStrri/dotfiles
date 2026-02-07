@@ -27,18 +27,19 @@ name = "go"
 roots = ["go.mod"]
 auto-format = true
 comment-token = "//"
-language-servers = [ "gopls", "golangci-lint-lsp"]
+language-servers = [ "gopls", "golangci-lint-lsp" ]
 formatter = { command = "goimports", args = [] }
 
 [language-server.ty]
 command = "ty"
 args = ["server"]
+[language-server.ruff]
+command = "ruff"
+args = ["server"]
 [[language]]
 name = "python"
 auto-format = true
-language-servers = [ "ty" ]
-formatter = { command = "ruff" , args = ["-", "--quiet"] }
-
+language-servers = [ "ruff", "ty"  ]
 
 [language-server.ols]
 command = "ols-arm64-darwin"

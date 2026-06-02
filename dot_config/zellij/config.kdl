@@ -6,7 +6,7 @@ keybinds clear-defaults=true {
         bind "Ctrl t" { SwitchToMode "normal"; }
         bind "tab" { ToggleTab; }
         bind "t" { NewTab; SwitchToMode "normal"; }
-        bind "h" { GoToPreviousTab; }
+        bind "m" { GoToPreviousTab; }
         bind "i" { GoToNextTab; }
         bind "n" { GoToPreviousTab; }
         bind "e" { GoToNextTab; }
@@ -47,21 +47,21 @@ keybinds clear-defaults=true {
         bind "Esc" { UndoRenamePane; SwitchToMode "Pane"; }
     }
     resize {
-        bind "Ctrl n" { SwitchToMode "normal"; }
+        bind "Ctrl r" { SwitchToMode "normal"; }
         bind "m" { Resize "Increase left"; }
         bind "n" { Resize "Increase down"; }
         bind "e" { Resize "Increase up"; }
         bind "i" { Resize "Increase right"; }
-        bind "H" { Resize "Decrease left"; }
+        bind "M" { Resize "Decrease left"; }
         bind "N" { Resize "Decrease down"; }
         bind "E" { Resize "Decrease up"; }
         bind "I" { Resize "Decrease right"; }
     }
     move {
-        bind "Ctrl m" { SwitchToMode "normal"; }
+        bind "Ctrl k" { SwitchToMode "normal"; }
         bind "tab" { MovePane; }
         bind "Shift tab" { MovePaneBackwards; }
-        bind "h" { MovePane "left"; }
+        bind "m" { MovePane "left"; }
         bind "n" { MovePane "down"; }
         bind "e" { MovePane "up"; }
         bind "i" { MovePane "right"; }
@@ -128,6 +128,10 @@ keybinds clear-defaults=true {
     shared_except "locked" {
         bind "Ctrl g" { SwitchToMode "locked"; }
         bind "Ctrl q" { Quit; }
+        bind "Ctrl m" { MoveFocus "left"; }
+        bind "Ctrl n" { MoveFocus "down"; }
+        bind "Ctrl e" { MoveFocus "up"; }
+        bind "Ctrl i" { MoveFocus "right"; }
     }
     shared_except "locked" "tab" {
         bind "Ctrl t" { SwitchToMode "tab"; }
@@ -139,7 +143,7 @@ keybinds clear-defaults=true {
         bind "Ctrl r" { SwitchToMode "resize"; }
     }
     shared_except "locked" "move" {
-        bind "Ctrl m" { SwitchToMode "move"; }
+        bind "Ctrl k" { SwitchToMode "move"; }
     }
     shared_except "locked" "scroll" {
         bind "Ctrl s" { SwitchToMode "scroll"; }

@@ -13,13 +13,35 @@ function fish_prompt
     set -l overlay0 6c7086
     set -l text cdd6f4
 
-    set -l pwd_info (set_color $blue)(prompt_pwd)
+    set -l pwd_info
     set -l git_info
     set -l status_info
     set -l symbol "⇒"
+    set -l in_zellij 0
+
+    if set -q ZELLIJ
+        set in_zellij 1
+    else
+        set -l pid $fish_pid
+
+        while test -n "$pid"; and test "$pid" -gt 1
+            set -l command_name (command ps -o comm= -p $pid 2>/dev/null | string trim)
+
+            if string match -q "*zellij*" -- $command_name
+                set in_zellij 1
+                break
+            end
+
+            set pid (command ps -o ppid= -p $pid 2>/dev/null | string trim)
+        end
+    end
+
+    if test $in_zellij -eq 0
+        set pwd_info (set_color $blue)(prompt_pwd)
+    end
 
     if test $last_status -ne 0
-        set status_info (set_color $red)" ✘ $last_status"
+        set status_info (set_color $red)"✘ $last_status"
     end
 
     if fish_is_root_user
@@ -42,8 +64,14 @@ function fish_prompt
             set staged (set_color $green)"+"
         end
 
-        set git_info " "(set_color $overlay0)"git:"(set_color $mauve)$git_branch$staged$dirty
+        set git_info (set_color $overlay0)"git:"(set_color $mauve)$git_branch$staged$dirty
     end
 
-    echo -n "$pwd_info$git_info$status_info "(set_color $peach)"$symbol "(set_color normal)
+    set -l left_prompt (string join " " -- $pwd_info $git_info $status_info)
+
+    if test -n "$left_prompt"
+        echo -n "$left_prompt "(set_color $peach)"$symbol "(set_color normal)
+    else
+        echo -n (set_color $peach)"$symbol "(set_color normal)
+    end
 end

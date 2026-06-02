@@ -32,14 +32,13 @@ render = true
 enable = true
 
 [keys.normal.backspace]
-a = ":run-shell-command zellij run --floating -x 10%% -y 10%% --width 80%% --height 80%% -- agent"
-p = ":run-shell-command zellij run --direction Right -- agent --plan"
-b = ":run-shell-command zellij run --floating -x 10%% -y 10%% --width 80%% --height 80%% -- mise run build"
-s = ":run-shell-command zellij run --floating -x 10%% -y 10%% --width 80%% --height 80%% -- mise run start"
-l = ":run-shell-command zellij run --floating -x 10%% -y 10%% --width 80%% --height 80%% -- mise run lint"
-f = ":run-shell-command zellij run --floating -x 10%% -y 10%% --width 80%% --height 80%% -- mise run fmt"
-t = ":run-shell-command zellij run --floating -x 10%% -y 10%% --width 80%% --height 80%% -- mise run test"
-T = ":run-shell-command zellij run --floating --direction down --size 20%% -- mise run test-watch"
+a = ":sh zellij run --direction Right -- opencode"
+p = ":sh zellij run --direction Right -- opencode --agent plan"
+b = ":sh zellij run --floating -x 10%% -y 10%% --width 80%% --height 80%% -- mise run build"
+s = ":sh zellij run --floating -x 10%% -y 10%% --width 80%% --height 80%% -- mise run start"
+l = ":sh zellij run --floating -x 10%% -y 10%% --width 80%% --height 80%% -- mise run lint"
+f = ":sh zellij run --floating -x 10%% -y 10%% --width 80%% --height 80%% -- mise run format"
+t = ":sh zellij run --floating -- mise run test"
 
 [keys.normal.space.b]
 b = "buffer_picker"

@@ -1,0 +1,59 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "shell": "fish",
+  "share": "disabled",
+  "autoupdate": false,
+  "snapshot": true,
+  "permission": {
+    "*": "ask",
+    "glob": "allow",
+    "grep": "allow",
+    "list": "allow",
+    "edit": "allow",
+    "todowrite": "allow",
+    "skill": {
+      "quality-gates": "allow",
+    },
+    "bash": {
+      "pwd*": "allow",
+      "ls*": "allow",
+      "find*": "allow",
+      "grep*": "allow",
+      "rg*": "allow",
+      "sort*": "allow",
+      "uniq*": "allow",
+      "npm *": "ask",
+      "pnpm *": "ask",
+      "bun *": "ask",
+      "g": "deny",
+      "g *": "deny",
+      "git": "deny",
+      "git *": "deny",
+      "rm*": "deny",
+      "mv*": "ask",
+      "cp*": "ask",
+      "chmod*": "deny",
+      "chown*": "deny",
+      "sudo*": "deny",
+      "curl*": "ask",
+      "wget*": "ask"
+    },
+    "read": {
+      "*": "allow",
+      "*.env": "deny",
+      "*.env.*": "deny",
+      "*.pem": "deny",
+      "*.key": "deny",
+      "*id_rsa*": "deny",
+      "*id_ed25519*": "deny"
+    },
+    "write": {
+      "*": "allow",
+      "**/Makefile": "deny",
+      "**/makefile": "deny",
+      "**/GNUmakefile": "deny"
+    },
+    "webfetch": "ask",
+    "websearch": "ask"
+  }
+}

@@ -6,33 +6,37 @@
   email = 13003392+flpStrri@users.noreply.github.com
   signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAF1y7C6sHFmsrJpfnfbOV7D3ULR2uiN2LX+KWo4P73h
 
+[push]
+  default = current
+
 [alias]
   s         = status
-  st        = !fish -c "git-st"
+  st        = git diff --stat
+  sts       = git diff --cached --stat
   diffo     = !git diff "origin/$(git default)"
   b         = branch
   br        = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
   cb        = "!f() { git switch --progress --no-track -c "$1" "origin/$(git default)"; }; f"
-  cbf       = "!f() { git switch --progress --no-track -c "$1" "$2"; }; f"
-  fcb       = !git fetch && git cb
   fap       = fetch --all --prune
   purr      = pull --rebase
-  # Log
+
   lg        = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative --max-count=15
   lga       = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative --all --max-count=15
-  last      = log -1 HEAD
-  # Rebase
+  last      = log -1 --show-signature --stat --decorate --pretty=format:'%C(auto)%h%Creset %C(bold)%s%Creset %C(dim white)%d%Creset%n%CblueAuthor:%Creset %an <%ae>%n%CblueDate:%Creset   %ad%n%n%B'
+
   rb        = !git rebase "refs/remotes/origin/$(git default)"
   rbi       = !git rebase -i "refs/remotes/origin/$(git default)"
   frb       = !git fetch && git rb
   frbi      = !git fetch && git rbi
-  # Commiting
+
   aa        = add .
-  c         = commit -m
+  c         = commit
+  cm        = commit -m
   ca        = commit --amend
   cano      = commit --amend --no-edit
+  pu        = push -u
   
-  # Tools
+  ui        = !fork .
   default   = !git remote show origin | awk '/HEAD branch/ {print $NF}'
   cbranch   = !git symbolic-ref --quiet HEAD | awk 'gsub(/refs\\/heads\\//, \"\")'
 
@@ -40,16 +44,17 @@
   ui = true
 
 [core]
-  pager = delta
+  pager        = delta
   excludesfile = ~/.gitignore
+  editor       = hx
 
 [interactive]
   diffFilter = delta --color-only
 
 [delta]
-  navigate = true
+  navigate     = true
   line-numbers = truei
-  features = catppuccin-mocha
+  features     = catppuccin-mocha
 
 [merge]
   conflictstyle = diff3

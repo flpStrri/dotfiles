@@ -1,0 +1,25 @@
+cpu: 4
+memory: 8
+disk: 100
+runtime: docker
+hostname: colima
+
+vmType: vz
+mountType: virtiofs
+rosetta: true
+autoActivate: true
+
+forwardAgent: false
+sshConfig: true
+
+network:
+  dns: []
+  dnsHosts: {}
+  hostAddresses: true
+
+docker:
+  features:
+    buildkit: true
+
+kubernetes:
+  enabled: false

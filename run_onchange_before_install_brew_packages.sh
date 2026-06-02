@@ -14,6 +14,8 @@ brew "jq"
 brew "zoxide"
 brew "atuin"
 brew "chezmoi"
+brew "zellij"
+brew "btop"
 
 brew "colima"
 brew "docker"
@@ -28,13 +30,21 @@ brew "xh"
 brew "gh"
 brew "git-delta"
 
-cask "1password", args: { force: true }
-
-cask "font-jetbrains-mono-nerd-font", args: { force: true }
 cask "font-jetbrains-mono", args: { force: true }
+
+cask "1password", args: { force: true }
+cask "appcleaner", args: { force: true }
+
+cask "focusrite-control-2", args: { force: true }
 
 cask "ghostty", args: { force: true }
 cask "raycast", args: { force: true }
+cask "zen", args: { force: true }
 cask "mouseless@preview", args: { force: true }
 cask "fork", args: { force: true }
+cask "postico", args: { force: true }
+cask "medis", args: { force: true }
+cask "bruno", args: { force: true }
+
+cask "microsoft-teams", args: { force: true }
 EOF
